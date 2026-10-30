@@ -1,0 +1,12 @@
+{
+  "model_class": "SpectralMaterialInverseNet",
+  "model_config": {
+    "n_wavelengths": 101,
+    "n_materials": 6,
+    "width": 384,
+    "depth": 5,
+    "dropout": 0.02
+  },
+  "prepared_data": "E:\\four-layer core–shell nanoparticles\\10_tandem_mie_inverse_results\\01_prepared_data\\prepared_tandem_data.npz",
+  "best_model": "E:\\four-layer core–shell nanoparticles\\10_tandem_mie_inverse_results\\02_frozen_pgff_tandem_training\\best_model.pt"
+}
