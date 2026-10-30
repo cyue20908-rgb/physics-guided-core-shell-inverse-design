@@ -143,7 +143,9 @@ def test_release_versions_match() -> None:
         ROOT / "src" / "core_shell_optical_design" / "__init__.py"
     ).read_text(encoding="utf-8")
     citation_match = re.search(r"^version:\s*([^\s]+)\s*$", citation, re.MULTILINE)
-    package_match = re.search(r'^__version__\s*=\s*["\']([^"\']+)["\']', package_init)
+    package_match = re.search(
+        r"^__version__\s*=\s*['\"]([^'\"]+)['\"]", package_init, re.MULTILINE
+    )
     assert citation_match is not None
     assert package_match is not None
     assert citation_match.group(1) == project_version
