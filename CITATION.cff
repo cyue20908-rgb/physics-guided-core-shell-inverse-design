@@ -5,6 +5,7 @@ type: software
 version: 1.0.1
 date-released: 2026-10-30
 repository-code: "https://github.com/cyue20908-rgb/physics-guided-core-shell-inverse-design"
+doi: "10.5281/zenodo.23803882"
 license: MIT
 abstract: "Source code, fixed inputs, trained model weights, and compact numerical evidence supporting spectral reconstruction and robust scattering design in multilayer core-shell nanoparticles."
 authors:
