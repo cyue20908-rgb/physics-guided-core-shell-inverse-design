@@ -1,0 +1,9 @@
+{
+  "selected_absorption_tier": {
+    "name": "ultra_low",
+    "band_absorption_fraction_max": 0.005,
+    "absorption_fraction_p95_max": 0.01,
+    "qabs_max_max": 0.03
+  },
+  "protocol_sha256": "fd7c482c3ddd73969b5b1980f5c4d1b3eb41e562bec3728c852385ded86833a9"
+}

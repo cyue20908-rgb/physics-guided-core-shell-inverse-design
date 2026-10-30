@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "physics-guided-core-shell-inverse-design"
+version = "1.0.0"
+description = "Reproducibility package for multilayer core-shell nanoparticle optical design"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE-CODE" }
+authors = [
+    { name = "Xinyue Chang" },
+    { name = "Huanhuan An" },
+    { name = "Jing Zhang" },
+    { name = "Haiyu Guo" },
+    { name = "Yuchun Gou", email = "ycgou@snut.edu.cn" },
+    { name = "Junfei Fang", email = "jffang@snut.edu.cn" },
+]
+keywords = [
+    "core-shell nanoparticles",
+    "inverse design",
+    "machine learning",
+    "Mie scattering",
+    "nanophotonics",
+]
+dependencies = [
+    "matplotlib==3.10.9",
+    "numpy==2.2.6",
+    "pandas==2.3.3",
+    "pymiediff==0.12",
+    "PyYAML==6.0.3",
+    "scikit-learn==1.8.0",
+    "scipy==1.13.1",
+    "torch==2.6.0",
+    "tqdm==4.67.3",
+]
+
+[project.urls]
+Repository = "https://github.com/cyue20908-rgb/physics-guided-core-shell-inverse-design"
+
+[project.optional-dependencies]
+test = ["pytest==9.0.3"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

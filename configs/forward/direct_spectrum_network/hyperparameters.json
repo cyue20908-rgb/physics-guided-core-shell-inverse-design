@@ -1,0 +1,36 @@
+{
+  "data_path": "data/dataset/multilayer_mie_dataset.npz",
+  "output_dir": "results/reproduced/forward_models/direct_spectrum_network",
+  "seed": 42,
+  "batch_size": 256,
+  "epochs": 300,
+  "learning_rate": 0.001,
+  "weight_decay": 1e-05,
+  "hidden_dim": 256,
+  "patience": 40,
+  "scheduler_patience": 12,
+  "num_workers": 0,
+  "use_amp": false,
+  "model": {
+    "name": "SimpleMLPBaseline",
+    "input_dim": 28,
+    "output_dim": 101,
+    "hidden_dim": 256,
+    "activation": "ReLU",
+    "output_activation": "Softplus",
+    "loss": "MSE",
+    "parameter_count": 164965
+  },
+  "input_features": {
+    "geometry": [
+      "r_core",
+      "shell1_thickness",
+      "shell2_thickness",
+      "shell3_thickness"
+    ],
+    "material": "4-layer one-hot",
+    "uses_wavelength_input": false,
+    "uses_fourier_features": false,
+    "uses_physics_features": false
+  }
+}

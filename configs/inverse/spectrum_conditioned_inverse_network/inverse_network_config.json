@@ -1,0 +1,12 @@
+{
+  "model_class": "SpectralMaterialInverseNet",
+  "model_config": {
+    "n_wavelengths": 101,
+    "n_materials": 6,
+    "width": 384,
+    "depth": 5,
+    "dropout": 0.02
+  },
+  "prepared_data": "data/inverse_design_training/inverse_design_training_data.npz",
+  "best_model": "checkpoints/inverse/spectrum_conditioned_inverse_network/best_model.pt"
+}

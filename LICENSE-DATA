@@ -1,0 +1,21 @@
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+Unless otherwise noted, the original research data, trained model weights,
+numerical results, validation files, reproducibility records, and repository
+documentation in this repository are licensed under the Creative Commons
+Attribution 4.0 International License.
+
+You may share and adapt these materials for any purpose, provided that you give
+appropriate credit, provide a link to the license, and indicate whether changes
+were made. The full legal code is available at:
+
+https://creativecommons.org/licenses/by/4.0/legalcode
+
+Suggested attribution:
+
+Chang, X., An, H., Zhang, J., Guo, H., Gou, Y., and Fang, J. Physics-Guided
+Hybrid Inverse Design of Multilayer Core-Shell Nanoparticles: reproducibility
+package, version 1.0.0.
+
+Third-party materials remain subject to their original terms. This license does
+not grant rights in content that the authors do not own.

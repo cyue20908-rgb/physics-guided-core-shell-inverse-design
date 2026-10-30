@@ -1,0 +1,39 @@
+cff-version: 1.2.0
+message: "If you use this software or its accompanying data, please cite the associated article and this software package."
+title: "Reproducibility Package for Physics-Guided Hybrid Inverse Design of Multilayer Core-Shell Nanoparticles"
+type: software
+version: 1.0.0
+date-released: 2026-10-27
+repository-code: "https://github.com/cyue20908-rgb/physics-guided-core-shell-inverse-design"
+license:
+  - MIT
+  - CC-BY-4.0
+abstract: "Source code, fixed inputs, trained model weights, and compact numerical evidence supporting spectral reconstruction and robust scattering design in multilayer core-shell nanoparticles."
+authors:
+  - family-names: Chang
+    given-names: Xinyue
+    affiliation: "School of Mechanical Engineering, Shaanxi University of Technology"
+  - family-names: An
+    given-names: Huanhuan
+    affiliation: "School of Mechanical Engineering, Shaanxi University of Technology"
+  - family-names: Zhang
+    given-names: Jing
+    affiliation: "School of Mechanical Engineering, Shaanxi University of Technology"
+  - family-names: Guo
+    given-names: Haiyu
+    affiliation: "School of Mechanical Engineering, Shaanxi University of Technology"
+  - family-names: Gou
+    given-names: Yuchun
+    affiliation: "School of Mechanical Engineering, Shaanxi University of Technology"
+    email: ycgou@snut.edu.cn
+  - family-names: Fang
+    given-names: Junfei
+    affiliation: "School of Mechanical Engineering, Shaanxi University of Technology"
+    email: jffang@snut.edu.cn
+keywords:
+  - core-shell nanoparticles
+  - inverse design
+  - machine learning
+  - Mie theory
+  - nanophotonics
+  - robust design

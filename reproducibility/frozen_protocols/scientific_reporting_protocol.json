@@ -1,0 +1,54 @@
+{
+  "stage": "07_final_scientific_report",
+  "protocol_version": "tandem-mie-inverse-2026-07-25-stage07-v3",
+  "read_only_stages": [
+    "03",
+    "04",
+    "05"
+  ],
+  "plotting": {
+    "font_family": "Times New Roman",
+    "font_fallback_allowed_in_formal_run": false,
+    "tick_marks": "black",
+    "tick_labels": "black",
+    "axes_and_spines": "black",
+    "tick_direction": "in",
+    "ticks_on_all_sides": true,
+    "png_dpi": 600,
+    "formats": [
+      "png",
+      "pdf",
+      "svg"
+    ],
+    "pdf_font_type": 42,
+    "background": "white"
+  },
+  "statistics": {
+    "bootstrap_samples": 10000,
+    "bootstrap_seed": 20260725,
+    "confidence_level": 0.95,
+    "paired_test": "exact two-sided sign test",
+    "pgff_proxy_mixed_with_exact_mie_tests": false
+  },
+  "ablation": {
+    "type": "retrospective from frozen intermediate artifacts",
+    "retraining": false,
+    "reoptimization": false,
+    "material_top_k": [
+      1,
+      20
+    ],
+    "continuous_restarts": [
+      1,
+      4
+    ],
+    "final_grid_nm": 1
+  },
+  "archive": {
+    "default_mode": "core",
+    "hash_algorithm": "SHA256",
+    "deterministic_zip": true,
+    "includes_stage06a_freeze": true,
+    "includes_stage06b_receipt": true
+  }
+}

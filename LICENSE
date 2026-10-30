@@ -1,0 +1,18 @@
+Copyright (c) 2026 Xinyue Chang, Huanhuan An, Jing Zhang, Haiyu Guo,
+Yuchun Gou, and Junfei Fang.
+
+This repository uses two licenses:
+
+1. Software source code is licensed under the MIT License. This includes the
+   contents of `src/`, `scripts/`, and `tests/`, together with software launchers,
+   package metadata, and code-oriented configuration files. See `LICENSE-CODE`.
+
+2. Original research data, trained model weights, numerical results, validation
+   files, reproducibility records, and repository documentation are licensed
+   under the Creative Commons Attribution 4.0 International License
+   (CC BY 4.0). See `LICENSE-DATA`.
+
+Third-party materials remain subject to their original terms. No additional
+rights are granted for content that the authors do not own. When reusing this
+repository, cite the associated article and software package as described in
+`CITATION.cff`.

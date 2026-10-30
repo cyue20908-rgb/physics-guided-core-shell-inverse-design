@@ -1,0 +1,15 @@
+{
+  "version": "tandem-mie-inverse-2026-07-24-target-benchmark-v2-singularity-guard",
+  "target_count": 10,
+  "pool_size": 4096,
+  "seed": 20260725,
+  "offgrid_quantization_nm": 0.25,
+  "boundary_margin_nm": 2.0,
+  "pymiediff_backend": "pena",
+  "pymiediff_precision": "double",
+  "solver_singularity_definition": "min_abs_sin = min_lambda |sin(2*pi*Rout/lambda)|",
+  "solver_singularity_tolerance": 1e-6,
+  "negative_efficiency_tolerance": 1e-7,
+  "relative_energy_residual_tolerance": 1e-8,
+  "policy": "Solver-singular candidates are rejected before PyMieDiff and replaced deterministically; materially negative efficiencies are never clipped."
+}

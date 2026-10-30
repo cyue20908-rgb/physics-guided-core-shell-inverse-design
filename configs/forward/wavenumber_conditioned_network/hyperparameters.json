@@ -1,0 +1,44 @@
+{
+  "data_path": "data/dataset/multilayer_mie_dataset.npz",
+  "split_dir": "checkpoints/forward/direct_spectrum_network",
+  "output_dir": "results/reproduced/forward_models/wavenumber_conditioned_network",
+  "seed": 42,
+  "batch_size": 128,
+  "epochs": 300,
+  "learning_rate": 0.001,
+  "weight_decay": 1e-05,
+  "hidden_dim": 256,
+  "patience": 40,
+  "scheduler_patience": 12,
+  "num_workers": 0,
+  "use_amp": false,
+  "model": {
+    "name": "RawK0MLP",
+    "structure_input_dim": 28,
+    "pointwise_input_dim": 29,
+    "pointwise_output_dim": 1,
+    "assembled_spectrum_dim": 101,
+    "hidden_dim": 256,
+    "activation": "ReLU",
+    "output_activation": "Softplus",
+    "loss": "MSE",
+    "parameter_count": 139521
+  },
+  "input_features": {
+    "geometry": [
+      "r_core",
+      "shell1_thickness",
+      "shell2_thickness",
+      "shell3_thickness"
+    ],
+    "material": "4-layer one-hot",
+    "uses_wavelength_input": true,
+    "wavelength_coordinate": "normalized_k0=(2*pi/lambda-k0_min)/(k0_max-k0_min)",
+    "uses_fourier_features": false,
+    "uses_material_nk": false,
+    "uses_physics_features": false,
+    "uses_auxiliary_qabs_qext_tasks": false,
+    "uses_physical_constraints": false
+  },
+  "ablation_role": "Tests explicit pointwise wavelength conditioning without Fourier or physics guidance."
+}

@@ -1,0 +1,33 @@
+{
+  "version": "L4_integer_v2",
+  "seed": 42,
+  "n_particles": 30000,
+  "n_layers": 4,
+  "materials": [
+    "Al2O3",
+    "BaSO4",
+    "SiO2",
+    "TiO2",
+    "PDMS",
+    "Air"
+  ],
+  "air_index": 5,
+  "radius_dtype": "int16",
+  "radius_core_min_nm": 120,
+  "radius_core_max_nm": 220,
+  "shell_thickness_min_nm": 20,
+  "shell_thickness_max_nm": 80,
+  "radius_outer_max_nm": 300,
+  "wavelength_start_nm": 400.0,
+  "wavelength_end_nm": 1000.0,
+  "wavelength_points": 101,
+  "wavelength_step_nm": 6.0,
+  "geometry_sampling": "Balanced integer core radii; sampling without replacement from all valid integer shell-thickness combinations",
+  "material_sampling": "All 400 valid material sequences, 75 samples per sequence",
+  "wavelength_grid_reason": "Standard 400-1000 nm wavelength grid with geometry-level filtering of x=m*pi singular points",
+  "singularity_tolerance": 1e-10,
+  "step1_dataset_id": "3edb9e441682a7b070c62a36e34c732ce8254230aa1028669053aa0d64687290",
+  "material_database_path": "data/inputs/material_database/material_data.npz",
+  "material_database_sha256": "336262b18c6e8172345bd82eb3d5d3d25c330f65b62ab0cf278143debfcabccb",
+  "interpolation_method": "linear interpolation of n and k, followed by epsilon=(n+i*k)^2"
+}
