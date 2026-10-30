@@ -1,0 +1,18 @@
+{
+  "benchmark_id": "6ea5821e736e5adb3d8b2dca",
+  "stage06a_freeze_content_sha256": "da171765cf69e1931bc2933c82d42563cdc05f7ab276c2e7f7df0dcef9046562",
+  "private_reference_sha256": "b140e1749a0ec45d5816fa59f398c6b7064557329f824939cc5a620cdb2286df",
+  "stage06b_summary": {
+    "path": "E:\\four-layer core–shell nanoparticles\\10_tandem_mie_inverse_results\\06B_posthoc_unblind_comparison\\stage06b_unblind_summary.json",
+    "filename": "stage06b_unblind_summary.json",
+    "size_bytes": 5363,
+    "sha256": "69f5071ad381b1e5305455a4e4391c3bc8157882845ee78d8dbc219c4ce5b55c"
+  },
+  "unblind_declaration": {
+    "path": "E:\\four-layer core–shell nanoparticles\\10_tandem_mie_inverse_results\\06B_posthoc_unblind_comparison\\POSTHOC_UNBLIND_COMPLETE.txt",
+    "filename": "POSTHOC_UNBLIND_COMPLETE.txt",
+    "size_bytes": 267,
+    "sha256": "73ad9895e076e20ae5b853a7efe6753e176fb206fe53ea1bf9fffa19f4e0b733"
+  },
+  "completed": true
+}

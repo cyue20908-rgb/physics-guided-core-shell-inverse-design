@@ -1,0 +1,66 @@
+{
+  "study": "parameter_matched_pgff_component_ablation",
+  "protocol_version": "1.0.0",
+  "formal_protocol_run": true,
+  "variant": "full_pgff",
+  "role": "Complete PGFF-Net treatment.",
+  "seed": 46,
+  "fourier_seed": 2026,
+  "parameter_count": 1397762,
+  "best_epoch": 298,
+  "epochs_completed": 300,
+  "best_validation_q_sca_MSE": 0.0003553200707150002,
+  "training_seconds": 8788.668191194534,
+  "test_inference_seconds": 1.9428943000093568,
+  "test_samples_per_second": 2316.1321745492423,
+  "device": "cpu",
+  "torch_version": "2.6.0+cu124",
+  "Q_sca": {
+    "MSE": 0.000322484876960516,
+    "RMSE": 0.017957863930894342,
+    "MAE": 0.007791303098201752,
+    "R2": 0.9996746478564953,
+    "MAPE_percent": 0.28720125555992126,
+    "maximum_absolute_error": 1.1734204292297363,
+    "median_sample_MAE": 0.006091463379561901,
+    "95th_percentile_sample_MAE": 0.01924782805144787,
+    "peak_wavelength_MAE_nm": 1.9946666955947876,
+    "peak_amplitude_MAE": 0.009403742849826813,
+    "shortwave_MAE_400p5_600p5": 0.014434034004807472,
+    "longwave_MAE_above_600p5": 0.004420366603881121,
+    "99th_percentile_sample_MAE": 0.02999093569815159
+  },
+  "Q_abs": {
+    "MSE": 1.972085374291055e-05,
+    "RMSE": 0.004440816787811736,
+    "MAE": 0.0013769441284239292,
+    "R2": 0.9954091597221397,
+    "MAPE_percent": 448786.1875,
+    "maximum_absolute_error": 0.39617228507995605
+  },
+  "Q_ext": {
+    "MSE": 0.0003669504076242447,
+    "RMSE": 0.01915594966646772,
+    "MAE": 0.008065464906394482,
+    "R2": 0.9996373482503588,
+    "MAPE_percent": 0.28839293122291565,
+    "maximum_absolute_error": 1.2388880252838135
+  },
+  "max_physical_residual": 2.384185791015625e-07,
+  "negative_prediction_count": 0,
+  "provenance": {
+    "protocol_path": "configs/forward/controlled_ablation/protocol.json",
+    "protocol_sha256": "aa03037207676cb25f6a96505d4656e06c794f3dd37de49582d87ac78ee156c3",
+    "dataset_path": "data/dataset/multilayer_mie_dataset.npz",
+    "dataset_sha256": "007b1247fe59cac5e62fcca1bb1a677ed45e481af1b4eda7de6ba825a8646861",
+    "split_sha256": {
+      "idx_train.npy": "3ae268e35ae2773fd6905adfe453d2e4a53956b622b7ad50b50b8917aec52d77",
+      "idx_val.npy": "afa903c33fd7e9f62fd795d035b08151734f829ebcdfb5a1c5958699f6f8a085",
+      "idx_test.npy": "9bf221969ece5072af6397e7c5d5493a3160ab4be096f735d780c4102ee1c182"
+    },
+    "python": "3.11.15 | packaged by conda-forge | (main, Mar  5 2026, 16:36:00) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.22631-SP0",
+    "torch": "2.6.0+cu124",
+    "numpy": "2.2.6"
+  }
+}

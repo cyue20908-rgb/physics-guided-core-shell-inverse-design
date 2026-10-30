@@ -1,0 +1,107 @@
+{
+  "stage": "08D_integer_robust_finalize",
+  "version": "goal-free-robust-design-2026-07-25-stage08D-v1",
+  "status": "frozen",
+  "protocol_sha256": "fd7c482c3ddd73969b5b1980f5c4d1b3eb41e562bec3728c852385ded86833a9",
+  "selected_structure": {
+    "sequence_id": 246,
+    "material_indices": [
+      3,
+      4,
+      1,
+      3
+    ],
+    "material_names_core_to_outer": [
+      "TiO2",
+      "PDMS",
+      "BaSO4",
+      "TiO2"
+    ],
+    "materials": "TiO2|PDMS|BaSO4|TiO2",
+    "r_core_nm": 142,
+    "t1_nm": 64,
+    "t2_nm": 57,
+    "t3_nm": 21,
+    "interface_radii_nm": [
+      142,
+      206,
+      263,
+      284
+    ],
+    "outer_radius_nm": 284,
+    "boundary_clearance_nm": 1.0
+  },
+  "selected_metrics": {
+    "robust_tail_mean_qsca": 3.096047114847832,
+    "robust_mean_qsca": 3.7004277466624367,
+    "robust_qsca_cv": 0.11489734300022163,
+    "robust_band_absorption_fraction": 0.00011838534689714695,
+    "robust_absorption_fraction_p95": 0.0004991173300105847,
+    "robust_max_qabs": 0.028203864316539123
+  },
+  "input_artifacts": {
+    "dataset": {
+      "path": "E:\\four-layer core–shell nanoparticles\\04_export_L4_v2\\L4_dataset.npz",
+      "filename": "L4_dataset.npz",
+      "size_bytes": 65144079,
+      "sha256": "007b1247fe59cac5e62fcca1bb1a677ed45e481af1b4eda7de6ba825a8646861"
+    },
+    "protocol_lock": {
+      "path": "E:\\four-layer core–shell nanoparticles\\11_goal_driven_robust_design_results\\08A_reachability_and_protocol\\STAGE08_PROTOCOL_LOCK.json",
+      "filename": "STAGE08_PROTOCOL_LOCK.json",
+      "size_bytes": 13076,
+      "sha256": "03fed20fcdfaf810491b64db40dc7ec624039ba80642631dd752c551272ebefb"
+    },
+    "stage08c_summary": {
+      "path": "E:\\four-layer core–shell nanoparticles\\11_goal_driven_robust_design_results\\08C_continuous_refine\\stage08c_summary.json",
+      "filename": "stage08c_summary.json",
+      "size_bytes": 3054,
+      "sha256": "d9d24eda0104add812b8bff2ca4289befc3bb209a2a3114b12388f3cbcbe883c"
+    },
+    "stage08c_selected_candidates": {
+      "path": "E:\\four-layer core–shell nanoparticles\\11_goal_driven_robust_design_results\\08C_continuous_refine\\selected_stage08d_continuous_candidates.npz",
+      "filename": "selected_stage08d_continuous_candidates.npz",
+      "size_bytes": 11789,
+      "sha256": "512d19a51e90bdc88d7eb91d3ce2ffdc6a75f0aa7f0f4e5b764adcbf4e59e8c9"
+    }
+  },
+  "output_artifacts": {
+    "final_design_json": {
+      "path": "E:\\four-layer core–shell nanoparticles\\11_goal_driven_robust_design_results\\08D_final_robust_design\\FINAL_ROBUST_DESIGN.json",
+      "filename": "FINAL_ROBUST_DESIGN.json",
+      "size_bytes": 4913,
+      "sha256": "08c67af3000715f943a980a4f41c16ff1818f4d1ff0b761b2ff0feb2d8b8d3a6"
+    },
+    "final_design_csv": {
+      "path": "E:\\four-layer core–shell nanoparticles\\11_goal_driven_robust_design_results\\08D_final_robust_design\\FINAL_ROBUST_DESIGN.csv",
+      "filename": "FINAL_ROBUST_DESIGN.csv",
+      "size_bytes": 2035,
+      "sha256": "3f76fac738055224dc991d7a4f2cd6ffde950b27f865d28d881371be9fd1b586"
+    },
+    "final_81_states_csv": {
+      "path": "E:\\four-layer core–shell nanoparticles\\11_goal_driven_robust_design_results\\08D_final_robust_design\\FINAL_ROBUST_DESIGN_81_STATES.csv",
+      "filename": "FINAL_ROBUST_DESIGN_81_STATES.csv",
+      "size_bytes": 31435,
+      "sha256": "673bd205299842d71e177c101fee2efbe297d360675fbee2d2cf3345a5978c4a"
+    },
+    "final_spectra_npz": {
+      "path": "E:\\four-layer core–shell nanoparticles\\11_goal_driven_robust_design_results\\08D_final_robust_design\\FINAL_ROBUST_DESIGN_SPECTRA.npz",
+      "filename": "FINAL_ROBUST_DESIGN_SPECTRA.npz",
+      "size_bytes": 179362,
+      "sha256": "1c340026f1bb782748681e15579082899709f7b950fe84fb5468a675e6e52349"
+    },
+    "all_nominal_candidates": {
+      "path": "E:\\four-layer core–shell nanoparticles\\11_goal_driven_robust_design_results\\08D_final_robust_design\\all_unique_nominal_integer_candidates.csv",
+      "filename": "all_unique_nominal_integer_candidates.csv",
+      "size_bytes": 17556375,
+      "sha256": "1b9cde0f6776859af978dbfa2949f7e469a5152918b72760194f0cabf88329c4"
+    },
+    "all_robust_candidate_metrics": {
+      "path": "E:\\four-layer core–shell nanoparticles\\11_goal_driven_robust_design_results\\08D_final_robust_design\\all_full_robust_candidate_metrics.csv",
+      "filename": "all_full_robust_candidate_metrics.csv",
+      "size_bytes": 610526,
+      "sha256": "b605386898e3d0d36095a3bd96bbfa64ff737cd5d1b89128e7262ef7fd38a829"
+    }
+  },
+  "freeze_record_sha256": "28b198dabd72ae1e55c7010de3aea0b91a5025e1d265485c62f7cde9aa933142"
+}

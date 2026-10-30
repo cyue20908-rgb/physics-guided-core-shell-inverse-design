@@ -1,0 +1,4 @@
+Benchmark ID: 6ea5821e736e5adb3d8b2dca
+Stage 06A freeze was verified before hidden-reference access.
+The ten Stage-05 rank-1 designs were compared without optimization, reranking, or adjustment.
+Stage 03-05 results must not be modified after this formal unblind.

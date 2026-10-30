@@ -1,0 +1,13 @@
+{
+  "check_atol_nm": 0.0001,
+  "hard_outer_radius_nm": 300.0,
+  "sample_count": 4500,
+  "illegal_count": 0,
+  "minimum_r_core_nm": 120.29695129394531,
+  "maximum_r_core_nm": 219.75537109375,
+  "minimum_shell_thickness_nm": 20.066722869873047,
+  "maximum_shell_thickness_nm": 79.27792358398438,
+  "minimum_outer_radius_nm": 190.12206840515137,
+  "maximum_outer_radius_nm": 299.99901580810547,
+  "maximum_outer_excess_nm": 0.0
+}

@@ -1,0 +1,4 @@
+﻿difficulty,target_count,median_qsca_nmae,maximum_qsca_nmae,spectrally_equivalent_count,exact_material_sequence_count,mean_layer_material_accuracy,median_geometry_parameter_mae_nm,structure_recovered_within_tolerance_count,alternative_equivalent_solution_count
+easy,3,0.0017413551558750917,0.0020673609892471537,3,3,1.0,1.75,1,2
+medium,4,0.0012770349067810758,0.0020734226463355607,4,4,1.0,0.6875,3,1
+hard,3,0.0016395727594241023,0.0023060165741751702,3,3,1.0,0.5,2,1

@@ -1,0 +1,21 @@
+{
+  "MSE": 0.007349888328462839,
+  "RMSE": 0.08573148971330685,
+  "MAE": 0.04601272940635681,
+  "R2": 0.9925847630220938,
+  "MAPE_percent": 1.598718523979187,
+  "NRMSE_by_mean": 0.026897141454878874,
+  "NRMSE_by_range": 0.013490074681572806,
+  "maximum_absolute_error": 2.0473575592041016,
+  "median_sample_MAE": 0.04004814475774765,
+  "95th_percentile_sample_MAE": 0.10118735581636429,
+  "peak_wavelength_MAE_nm": 13.725333213806152,
+  "peak_amplitude_MAE": 0.07555390149354935,
+  "model_name": "SimpleMLPBaseline",
+  "parameter_count": 164965,
+  "best_epoch": 295,
+  "best_validation_MSE": 0.007551652688946989,
+  "training_seconds": 404.4033102989197,
+  "device": "cpu",
+  "used_amp": false
+}

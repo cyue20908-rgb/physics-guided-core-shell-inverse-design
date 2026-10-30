@@ -1,0 +1,7 @@
+﻿reference_material,pred_Al2O3,pred_BaSO4,pred_SiO2,pred_TiO2,pred_PDMS,pred_Air
+Al2O3,8,0,0,0,0,0
+BaSO4,0,6,0,0,0,0
+SiO2,0,0,4,0,0,0
+TiO2,0,0,0,14,0,0
+PDMS,0,0,0,0,6,0
+Air,0,0,0,0,0,2

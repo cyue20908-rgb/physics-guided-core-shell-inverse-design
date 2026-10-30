@@ -1,0 +1,110 @@
+{
+  "stage": "06B_posthoc_unblind_compare",
+  "version": "tandem-mie-inverse-2026-07-25-stage06b-v1",
+  "status": "passed",
+  "created_unix_time": 1785312869.0098126,
+  "wall_time_seconds": 28.186933517456055,
+  "python": "3.11.15",
+  "benchmark_id": "6ea5821e736e5adb3d8b2dca",
+  "formal_unblind_performed": true,
+  "analysis_policy": {
+    "stage06a_freeze_verified_before_private_read": true,
+    "frozen_snapshot_used_instead_of_mutable_stage05_directory": true,
+    "private_reference_hash_verified_against_frozen_manifest": true,
+    "optimization_performed": false,
+    "material_reranking_performed": false,
+    "geometry_adjustment_performed": false,
+    "model_inference_performed": false,
+    "frozen_rank1_designs_only": true,
+    "qsca_is_primary_design_objective": true,
+    "qabs_qext_are_posthoc_unoptimized_diagnostics": true,
+    "generating_structure_recovery_is_secondary_due_to_inverse_nonuniqueness": true
+  },
+  "thresholds": {
+    "spectrally_equivalent_nmae": 0.02,
+    "spectrally_equivalent_nrmse": 0.02,
+    "spectrally_equivalent_r2": 0.99,
+    "spectrally_equivalent_peak_error_nm_when_applicable": 6.0,
+    "structure_close_max_parameter_error_nm": 2.0
+  },
+  "counts": {
+    "targets": 10,
+    "spectrally_equivalent": 10,
+    "exact_material_sequence_recovery": 10,
+    "nearest_integer_geometry_exact": 0,
+    "nearest_integer_structure_exact": 0,
+    "structure_recovered_within_tolerance": 6,
+    "alternative_spectrally_equivalent_solutions": 4
+  },
+  "aggregate_optical_metrics": {
+    "median_qsca_nmae": 0.0015423494496999042,
+    "mean_qsca_nmae": 0.0015645868321519506,
+    "maximum_qsca_nmae": 0.0023060165741751702,
+    "median_qsca_nrmse": 0.0021729593055849804,
+    "minimum_qsca_r2": 0.9996066319928153,
+    "median_qabs_nmae_ignoring_near_zero": 0.005452646752106832,
+    "median_qext_nmae": 0.0013431980314931088
+  },
+  "aggregate_structure_metrics": {
+    "mean_layer_material_accuracy": 1.0,
+    "median_material_hamming_distance": 0.0,
+    "median_geometry_parameter_mae_nm": 1.03125,
+    "median_geometry_parameter_max_abs_error_nm": 1.875,
+    "median_interface_radius_mae_nm": 0.75,
+    "median_outer_radius_abs_error_nm": 0.5
+  },
+  "integrity_chain": {
+    "preunblind_freeze_file": {
+      "path": "E:\\four-layer core–shell nanoparticles\\10_tandem_mie_inverse_results\\06A_preunblind_freeze\\PREUNBLIND_FREEZE.json",
+      "filename": "PREUNBLIND_FREEZE.json",
+      "size_bytes": 7506,
+      "sha256": "b954a7c42f1258da9620e64ab568f22b6e23120889f6c0f7821485d16c813e40"
+    },
+    "preunblind_freeze_file_sha256": "b954a7c42f1258da9620e64ab568f22b6e23120889f6c0f7821485d16c813e40",
+    "preunblind_freeze_content_sha256": "da171765cf69e1931bc2933c82d42563cdc05f7ab276c2e7f7df0dcef9046562",
+    "private_reference": {
+      "path": "E:\\four-layer core–shell nanoparticles\\10_tandem_mie_inverse_results\\03_private_blind_reference\\blind_references_private.npz",
+      "filename": "blind_references_private.npz",
+      "size_bytes": 27383,
+      "sha256": "b140e1749a0ec45d5816fa59f398c6b7064557329f824939cc5a620cdb2286df"
+    },
+    "public_target_snapshot": {
+      "path": "E:\\four-layer core–shell nanoparticles\\10_tandem_mie_inverse_results\\06A_preunblind_freeze\\snapshot\\blind_targets_public.npz",
+      "filename": "blind_targets_public.npz",
+      "size_bytes": 11026,
+      "sha256": "98057a846e7d5d4924334d376e04b9fa64f0ec790ab4a4504ba4b8cbc26f6eff"
+    },
+    "frozen_design_snapshot": {
+      "path": "E:\\four-layer core–shell nanoparticles\\10_tandem_mie_inverse_results\\06A_preunblind_freeze\\snapshot\\frozen_blind_integer_results.npz",
+      "filename": "frozen_blind_integer_results.npz",
+      "size_bytes": 32739,
+      "sha256": "6fce6cbf77b736b64d9c1ade4804501446b04f55d5b7a4bfff26758c7df77848"
+    }
+  },
+  "outputs": {
+    "per_target_comparison": {
+      "path": "E:\\four-layer core–shell nanoparticles\\10_tandem_mie_inverse_results\\06B_posthoc_unblind_comparison\\unblind_comparison_per_target.csv",
+      "filename": "unblind_comparison_per_target.csv",
+      "size_bytes": 8377,
+      "sha256": "488f61c870f2aa9e164df8496d1fdc0f4f2767955fc3af031353dc969899f884"
+    },
+    "by_difficulty_summary": {
+      "path": "E:\\four-layer core–shell nanoparticles\\10_tandem_mie_inverse_results\\06B_posthoc_unblind_comparison\\unblind_summary_by_difficulty.csv",
+      "filename": "unblind_summary_by_difficulty.csv",
+      "size_bytes": 474,
+      "sha256": "196be3eb879a1f30346ac033708cfef43df9dce37e946d094b7950be8cd56794"
+    },
+    "material_confusion": {
+      "path": "E:\\four-layer core–shell nanoparticles\\10_tandem_mie_inverse_results\\06B_posthoc_unblind_comparison\\material_recovery_confusion_counts.csv",
+      "filename": "material_recovery_confusion_counts.csv",
+      "size_bytes": 194,
+      "sha256": "898137277e3be9ebc2b90dd60f9cfbea5824a9b089b730a2ebbc955d6ff1762e"
+    },
+    "comparison_spectra": {
+      "path": "E:\\four-layer core–shell nanoparticles\\10_tandem_mie_inverse_results\\06B_posthoc_unblind_comparison\\unblind_comparison_spectra.npz",
+      "filename": "unblind_comparison_spectra.npz",
+      "size_bytes": 53514,
+      "sha256": "1e08d7933544d41f9bb8cb9e55f1d63c2bebaa276d1a91681aac95c667dac512"
+    }
+  }
+}

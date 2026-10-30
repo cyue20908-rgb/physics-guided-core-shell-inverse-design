@@ -1,0 +1,255 @@
+{
+  "stage": "08B_exhaustive_material_screen",
+  "version": "goal-free-robust-design-2026-07-25-stage08B-v1",
+  "status": "passed",
+  "wall_time_seconds": 20.787703999998485,
+  "device": "cpu",
+  "amp_inverse_initialization": false,
+  "selected_absorption_tier": {
+    "name": "ultra_low",
+    "band_absorption_fraction_max": 0.005,
+    "absorption_fraction_p95_max": 0.01,
+    "qabs_max_max": 0.03
+  },
+  "counts": {
+    "legal_material_sequences": 400,
+    "seeds_per_sequence": 20,
+    "all_exact_candidates": 8000,
+    "nominal_feasible_candidates": 2664,
+    "selected_sequences": 40,
+    "selected_stage08c_seeds": 200
+  },
+  "policy": {
+    "all_400_sequences_enumerated": true,
+    "pymiediff_used_for_all_screen_candidates": true,
+    "qabs_used_for_hard_feasibility": true,
+    "inverse_network_role": "initialization only",
+    "pgff_used": false,
+    "stage03_to_stage06_candidate_results_read": false
+  },
+  "inputs": {
+    "dataset": {
+      "path": "E:\\four-layer core–shell nanoparticles\\04_export_L4_v2\\L4_dataset.npz",
+      "filename": "L4_dataset.npz",
+      "size_bytes": 65144079,
+      "sha256": "007b1247fe59cac5e62fcca1bb1a677ed45e481af1b4eda7de6ba825a8646861"
+    },
+    "prepared_data": {
+      "path": "E:\\four-layer core–shell nanoparticles\\10_tandem_mie_inverse_results\\01_prepared_data\\prepared_tandem_data.npz",
+      "filename": "prepared_tandem_data.npz",
+      "size_bytes": 87558,
+      "sha256": "f80af947119b103def8f9ee76c0fbfa0aed1d6cd9f639ccbd46766576cc7f755"
+    },
+    "stage02_training_summary": {
+      "path": "E:\\four-layer core–shell nanoparticles\\10_tandem_mie_inverse_results\\02_frozen_pgff_tandem_training\\training_summary.json",
+      "filename": "training_summary.json",
+      "size_bytes": 6522,
+      "sha256": "e2a73ea156a3f1fd5cf91bcb4a6ce4be97c150544e7f2df625f6abd7a396fc7b"
+    },
+    "stage02_inverse_checkpoint": {
+      "path": "E:\\four-layer core–shell nanoparticles\\10_tandem_mie_inverse_results\\02_frozen_pgff_tandem_training\\best_model.pt",
+      "filename": "best_model.pt",
+      "size_bytes": 36163404,
+      "sha256": "16b0ed83008cc95932341c930f3e40a3364c4058f66b9a227605e576a3bb625d"
+    },
+    "pgff_checkpoint": {
+      "path": "E:\\four-layer core–shell nanoparticles\\07_pgff_results\\best_model.pt",
+      "filename": "best_model.pt",
+      "size_bytes": 5627211,
+      "sha256": "c46c47acc42fdac1d47b6303963cfdb946ce4c1c728ab8b4e07bce8ed10271ac"
+    },
+    "stage02_summary": {
+      "stage": "02_train_frozen_pgff_tandem",
+      "version": "tandem-mie-inverse-2026-07-24-step02-v3-boundary-fix",
+      "status": "passed",
+      "formal_run": true,
+      "wall_time_seconds": 4.367335599847138,
+      "device": "cpu",
+      "amp_enabled": false,
+      "best_epoch": 194,
+      "epochs_completed": 200,
+      "best_validation_mean_nmae": 0.0032889952417463064,
+      "final_best_checkpoint_validation": {
+        "mean_nmae": 0.0032890108413994312,
+        "median_nmae": 0.0026497007347643375,
+        "p95_nmae": 0.0076415399089455605,
+        "mean_nrmse": 0.005080004222691059,
+        "median_nrmse": 0.003788613248616457,
+        "mean_r2": 0.9982621669769287,
+        "median_r2": 0.9994808435440063,
+        "mean_peak_error_nm": 3.7226667404174805,
+        "median_peak_error_nm": 0.0,
+        "mean_geometry_mae_nm": 4.445242881774902,
+        "sample_count": 4500
+      },
+      "validation_geometry_diagnostics": {
+        "check_atol_nm": 0.0001,
+        "hard_outer_radius_nm": 300.0,
+        "sample_count": 4500,
+        "illegal_count": 0,
+        "minimum_r_core_nm": 120.29695129394531,
+        "maximum_r_core_nm": 219.75537109375,
+        "minimum_shell_thickness_nm": 20.066722869873047,
+        "maximum_shell_thickness_nm": 79.27792358398438,
+        "minimum_outer_radius_nm": 190.12206840515137,
+        "maximum_outer_radius_nm": 299.99901580810547,
+        "maximum_outer_excess_nm": 0.0
+      },
+      "data_policy": {
+        "training_examples": "forward train split only",
+        "model_selection": "forward validation split only",
+        "test_split_evaluated": false,
+        "blind_targets_read": false,
+        "legacy_inverse_results_read": false,
+        "counterfactual_pairs_source": "train spectra + exact legal material registry"
+      },
+      "optimization": {
+        "primary_loss": "per-target-peak-normalized Smooth-L1 Qsca cycle loss",
+        "native_pair_weight": 1.0,
+        "counterfactual_pair_weight": 0.5,
+        "counterfactual_pairs_per_native": 1,
+        "geometry_anchor_initial_weight": 0.05,
+        "geometry_anchor_decay_epochs": 40,
+        "checkpoint_selection_metric": "validation native mean NMAE",
+        "pgff_parameters_frozen": true
+      },
+      "dimensions": {
+        "train_samples": 21000,
+        "validation_samples": 4500,
+        "test_samples_untouched": 4500,
+        "wavelengths": 101,
+        "materials": 6,
+        "legal_material_sequences": 400,
+        "inverse_parameter_count": 3009412,
+        "frozen_pgff_parameter_count": 1397762
+      },
+      "model_config": {
+        "n_wavelengths": 101,
+        "n_materials": 6,
+        "width": 384,
+        "depth": 5,
+        "dropout": 0.02
+      },
+      "arguments": {
+        "dataset": "E:\\four-layer core–shell nanoparticles\\04_export_L4_v2\\L4_dataset.npz",
+        "baseline_dir": "E:\\four-layer core–shell nanoparticles\\06_baseline_mlp_results",
+        "pgff_dir": "E:\\four-layer core–shell nanoparticles\\07_pgff_results",
+        "result_root": "E:\\four-layer core–shell nanoparticles\\10_tandem_mie_inverse_results",
+        "prepared_data": "E:\\four-layer core–shell nanoparticles\\10_tandem_mie_inverse_results\\01_prepared_data\\prepared_tandem_data.npz",
+        "device": "cpu",
+        "seed": 20260724,
+        "epochs": 200,
+        "batch_size": 256,
+        "validation_batch_size": 512,
+        "num_workers": 0,
+        "width": 384,
+        "depth": 5,
+        "dropout": 0.02,
+        "learning_rate": 0.0003,
+        "minimum_learning_rate": 1e-06,
+        "weight_decay": 1e-05,
+        "gradient_clip": 5.0,
+        "smooth_l1_beta": 0.01,
+        "spectral_scale_floor": 1e-06,
+        "geometry_anchor_weight": 0.05,
+        "geometry_anchor_decay_epochs": 40,
+        "counterfactual_per_sample": 1,
+        "counterfactual_weight": 0.5,
+        "counterfactual_start_epoch": 5,
+        "counterfactual_probe_interval": 5,
+        "counterfactual_probe_samples": 512,
+        "counterfactual_probe_candidates": 4,
+        "patience": 30,
+        "minimum_improvement": 1e-05,
+        "amp": false,
+        "resume": true,
+        "overwrite": false,
+        "smoke_test": false
+      },
+      "inputs": {
+        "dataset": {
+          "path": "E:\\four-layer core–shell nanoparticles\\04_export_L4_v2\\L4_dataset.npz",
+          "filename": "L4_dataset.npz",
+          "size_bytes": 65144079,
+          "sha256": "007b1247fe59cac5e62fcca1bb1a677ed45e481af1b4eda7de6ba825a8646861"
+        },
+        "prepared_data": {
+          "path": "E:\\four-layer core–shell nanoparticles\\10_tandem_mie_inverse_results\\01_prepared_data\\prepared_tandem_data.npz",
+          "filename": "prepared_tandem_data.npz",
+          "size_bytes": 87558,
+          "sha256": "f80af947119b103def8f9ee76c0fbfa0aed1d6cd9f639ccbd46766576cc7f755"
+        },
+        "pgff_checkpoint": {
+          "path": "E:\\four-layer core–shell nanoparticles\\07_pgff_results\\best_model.pt",
+          "filename": "best_model.pt",
+          "size_bytes": 5627211,
+          "sha256": "c46c47acc42fdac1d47b6303963cfdb946ce4c1c728ab8b4e07bce8ed10271ac"
+        }
+      },
+      "outputs": {
+        "best_model": {
+          "path": "E:\\four-layer core–shell nanoparticles\\10_tandem_mie_inverse_results\\02_frozen_pgff_tandem_training\\best_model.pt",
+          "filename": "best_model.pt",
+          "size_bytes": 36163404,
+          "sha256": "16b0ed83008cc95932341c930f3e40a3364c4058f66b9a227605e576a3bb625d"
+        },
+        "last_checkpoint": {
+          "path": "E:\\four-layer core–shell nanoparticles\\10_tandem_mie_inverse_results\\02_frozen_pgff_tandem_training\\last_checkpoint.pt",
+          "filename": "last_checkpoint.pt",
+          "size_bytes": 36163404,
+          "sha256": "5273d03d1bb45d57a15a889a352233acc046be6b604338dae0fdd55c15c698cb"
+        },
+        "training_history": {
+          "path": "E:\\four-layer core–shell nanoparticles\\10_tandem_mie_inverse_results\\02_frozen_pgff_tandem_training\\training_history.csv",
+          "filename": "training_history.csv",
+          "size_bytes": 65821,
+          "sha256": "16617b51d42f173c01b2807e4e01affdee85ec4cb713d81678b5e6de11e6ca92"
+        },
+        "validation_predictions": {
+          "path": "E:\\four-layer core–shell nanoparticles\\10_tandem_mie_inverse_results\\02_frozen_pgff_tandem_training\\validation_predictions.csv",
+          "filename": "validation_predictions.csv",
+          "size_bytes": 953088,
+          "sha256": "b8be5b37da2f40071adad183ccf17284cd7b570eb5ad0ca67ba88cc66831979a"
+        },
+        "validation_geometry_diagnostics": {
+          "path": "E:\\four-layer core–shell nanoparticles\\10_tandem_mie_inverse_results\\02_frozen_pgff_tandem_training\\validation_geometry_diagnostics.json",
+          "filename": "validation_geometry_diagnostics.json",
+          "size_bytes": 438,
+          "sha256": "9bd52dceb9fecd55a76d68ae4ee02b527e61cc3a59624a8347e8e04bdb80b7cc"
+        }
+      }
+    },
+    "protocol_lock": {
+      "path": "E:\\four-layer core–shell nanoparticles\\11_goal_driven_robust_design_results\\08A_reachability_and_protocol\\STAGE08_PROTOCOL_LOCK.json",
+      "filename": "STAGE08_PROTOCOL_LOCK.json",
+      "size_bytes": 13076,
+      "sha256": "03fed20fcdfaf810491b64db40dc7ec624039ba80642631dd752c551272ebefb"
+    }
+  },
+  "outputs": {
+    "all_candidates": {
+      "path": "E:\\four-layer core–shell nanoparticles\\11_goal_driven_robust_design_results\\08B_material_screen\\all_8000_exact_candidates.csv",
+      "filename": "all_8000_exact_candidates.csv",
+      "size_bytes": 3920800,
+      "sha256": "07948e4cf963d6d0bbee3dca5ce91da512d47c91602988838a24fbfa9d2e3331"
+    },
+    "sequence_summary": {
+      "path": "E:\\four-layer core–shell nanoparticles\\11_goal_driven_robust_design_results\\08B_material_screen\\material_sequence_screen_summary.csv",
+      "filename": "material_sequence_screen_summary.csv",
+      "size_bytes": 69401,
+      "sha256": "887ae9a8728b1a5be9f48e3fa30bdfb994499ceb532cbe5b035fa2280064e195"
+    },
+    "selected_seeds_csv": {
+      "path": "E:\\four-layer core–shell nanoparticles\\11_goal_driven_robust_design_results\\08B_material_screen\\selected_stage08c_seeds.csv",
+      "filename": "selected_stage08c_seeds.csv",
+      "size_bytes": 99760,
+      "sha256": "0d06378b5b7740bfa89bcdcce75604748f091a0ef7fa8147c3298fbc0e64ef7e"
+    },
+    "selected_seeds_npz": {
+      "path": "E:\\four-layer core–shell nanoparticles\\11_goal_driven_robust_design_results\\08B_material_screen\\selected_stage08c_seeds.npz",
+      "filename": "selected_stage08c_seeds.npz",
+      "size_bytes": 16154,
+      "sha256": "b42fd5fa11d58796b62b6a78b7567b1c669cbc35f65d6ff8a1cb8b23671fec24"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "stage": "09E_figure7_AM15G_weighted",
+  "status": "passed",
+  "AM15G_file": "E:\\four-layer core–shell nanoparticles\\reference_data\\ASTMG173.csv",
+  "AM15G_standard": "ASTM G173-03",
+  "AM15G_column": "global",
+  "metrics": {
+    "integration_min_nm": 400.0,
+    "integration_max_nm": 1000.0,
+    "AM15G_energy_coverage_fraction": 0.6936034120295727,
+    "EnergyWeighted_Qsca": 3.730538239572705,
+    "EnergyWeighted_Qabs": 0.000322796656327517,
+    "EnergyWeighted_Qext": 3.7308610362290326,
+    "EnergyWeighted_Albedo": 0.9999134793139726,
+    "PhotonWeighted_Qsca": 3.758351082518356,
+    "PhotonWeighted_Qabs": 0.00020263245927068646,
+    "PhotonWeighted_Qext": 3.7585537149776265,
+    "PhotonWeighted_Albedo": 0.9999460876510922,
+    "EnergyWeighted_Csca_um2": 0.9452747316721526,
+    "EnergyWeighted_Cabs_um2": 8.17928950460541e-05,
+    "IntegratedScatteringPower_W_per_particle": 6.558887979554056e-10,
+    "IntegratedAbsorptionPower_W_per_particle": 5.6752859053102614e-14,
+    "IntegratedExtinctionPower_W_per_particle": 6.559455508144587e-10,
+    "ScatteringContributionPeakWavelength_nm": 451.0,
+    "ScatteringLambda50_nm": 647.9356680639679,
+    "ScatteringLambda90_nm": 878.545469362722
+  },
+  "input_hashes": {
+    "final_json_sha256": "08c67af3000715f943a980a4f41c16ff1818f4d1ff0b761b2ff0feb2d8b8d3a6",
+    "final_spectra_sha256": "1c340026f1bb782748681e15579082899709f7b950fe84fb5468a675e6e52349",
+    "dataset_sha256": "007b1247fe59cac5e62fcca1bb1a677ed45e481af1b4eda7de6ba825a8646861"
+  },
+  "scope_note": "Metrics describe the isolated-particle optical response over the 400–1000 nm overlap. They are not solar-cell EQE, short-circuit current, or power-conversion efficiency."
+}

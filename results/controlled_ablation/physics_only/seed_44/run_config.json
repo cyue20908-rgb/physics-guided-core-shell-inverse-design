@@ -1,0 +1,41 @@
+{
+  "variant": {
+    "name": "physics_only",
+    "coordinate_mode": "raw_k0",
+    "use_physics_features": true,
+    "conditioning_mode": "additive",
+    "lambda_curve": 0.01,
+    "role": "Isolates the 24 Mie-inspired pointwise descriptors."
+  },
+  "seed": 44,
+  "fourier_seed": 2026,
+  "model": {
+    "hidden_dim": 192,
+    "fourier_frequencies": 32,
+    "fourier_scale": 3.0,
+    "dropout": 0.0,
+    "n_structure_blocks": 2,
+    "n_wavelength_blocks": 2,
+    "n_physics_blocks": 2,
+    "n_fusion_blocks": 2
+  },
+  "training": {
+    "batch_size": 128,
+    "epochs": 300,
+    "learning_rate": 0.0003,
+    "weight_decay": 1e-05,
+    "lambda_abs": 0.1,
+    "lambda_ext": 0.1,
+    "lambda_curve": 0.01,
+    "curve_warmup_epochs": 20,
+    "huber_beta": 0.02,
+    "patience": 50,
+    "scheduler_patience": 15,
+    "num_workers": 0,
+    "use_amp": false,
+    "gradient_clip_norm": 5.0,
+    "model_selection_metric": "validation Q_sca MSE"
+  },
+  "formal_protocol_run": true,
+  "parameter_count": 1397762
+}

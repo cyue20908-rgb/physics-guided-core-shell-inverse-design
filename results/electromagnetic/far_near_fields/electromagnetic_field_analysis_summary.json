@@ -1,0 +1,33 @@
+{
+  "stage": "09B_figure4_far_near_fields",
+  "status": "passed",
+  "pymiediff_version": "0.12",
+  "backend": "pena",
+  "precision": "double",
+  "device": "cpu",
+  "representative_wavelengths_nm": [
+    406.0,
+    748.0,
+    778.0
+  ],
+  "selection_rule": "maximum nominal Qsca in each of 400–550, 550–750 and 750–1000 nm; exact Pena singular points excluded",
+  "asymmetry_g": [
+    0.36674980310972866,
+    0.5173805481241155,
+    0.5508610562926248
+  ],
+  "forward_backward_ratio": [
+    2.0965674251474704,
+    4.474269723190001,
+    5.209973140293351
+  ],
+  "nearfield_grid_n": 301,
+  "nearfield_domain_factor": 1.65,
+  "nearfield_y_offset_nm": 1.0,
+  "runtime_seconds": 21.845682621002197,
+  "input_hashes": {
+    "final_json_sha256": "08c67af3000715f943a980a4f41c16ff1818f4d1ff0b761b2ff0feb2d8b8d3a6",
+    "final_spectra_sha256": "1c340026f1bb782748681e15579082899709f7b950fe84fb5468a675e6e52349",
+    "dataset_sha256": "007b1247fe59cac5e62fcca1bb1a677ed45e481af1b4eda7de6ba825a8646861"
+  }
+}

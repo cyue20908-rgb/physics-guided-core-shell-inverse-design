@@ -1,0 +1,53 @@
+{
+  "stage": "08A_preregister_reachability",
+  "version": "goal-free-robust-design-2026-07-25-stage08A-v1",
+  "status": "passed",
+  "wall_time_seconds": 228.22629959999904,
+  "device": "cpu",
+  "python": "3.11.15",
+  "selected_absorption_tier": {
+    "name": "ultra_low",
+    "band_absorption_fraction_max": 0.005,
+    "absorption_fraction_p95_max": 0.01,
+    "qabs_max_max": 0.03
+  },
+  "counts": {
+    "legal_material_sequences": 400,
+    "nominal_calibration_designs": 6400,
+    "calibration_states": 57600,
+    "selected_tier_feasible_designs": 1787,
+    "selected_tier_feasible_sequences": 144
+  },
+  "outputs": {
+    "protocol_lock": {
+      "path": "E:\\four-layer core–shell nanoparticles\\11_goal_driven_robust_design_results\\08A_reachability_and_protocol\\STAGE08_PROTOCOL_LOCK.json",
+      "filename": "STAGE08_PROTOCOL_LOCK.json",
+      "size_bytes": 13076,
+      "sha256": "03fed20fcdfaf810491b64db40dc7ec624039ba80642631dd752c551272ebefb"
+    },
+    "selected_absorption_tier": {
+      "path": "E:\\four-layer core–shell nanoparticles\\11_goal_driven_robust_design_results\\08A_reachability_and_protocol\\selected_absorption_tier.json",
+      "filename": "selected_absorption_tier.json",
+      "size_bytes": 270,
+      "sha256": "a05b90dacca9a5bdd2d1dc9a4eb07b4307f6bd9b1544c95ad2b92cba0eb569b0"
+    },
+    "calibration_nominal_designs": {
+      "path": "E:\\four-layer core–shell nanoparticles\\11_goal_driven_robust_design_results\\08A_reachability_and_protocol\\calibration_nominal_designs.csv",
+      "filename": "calibration_nominal_designs.csv",
+      "size_bytes": 2423096,
+      "sha256": "11d7c250def85b8412995d7500c36f1a57cb10f1a401d45691a5c7fb31556de0"
+    },
+    "calibration_state_metrics": {
+      "path": "E:\\four-layer core–shell nanoparticles\\11_goal_driven_robust_design_results\\08A_reachability_and_protocol\\calibration_state_metrics.csv",
+      "filename": "calibration_state_metrics.csv",
+      "size_bytes": 21193442,
+      "sha256": "c943c0a48bef745f574f5c92ab9f7eca8e745610e494f8dc5701215a7930e34d"
+    },
+    "tier_reachability": {
+      "path": "E:\\four-layer core–shell nanoparticles\\11_goal_driven_robust_design_results\\08A_reachability_and_protocol\\absorption_tier_reachability.csv",
+      "filename": "absorption_tier_reachability.csv",
+      "size_bytes": 290,
+      "sha256": "e18b76cb1c9f9fe571f2c082c8863f90faa3b10c161f8ba33f7702c85fdbf0db"
+    }
+  }
+}

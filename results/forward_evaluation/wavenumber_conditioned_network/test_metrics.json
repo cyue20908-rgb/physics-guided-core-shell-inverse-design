@@ -1,0 +1,21 @@
+{
+  "MSE": 0.002569738309830427,
+  "RMSE": 0.05069258633992181,
+  "MAE": 0.02473716251552105,
+  "R2": 0.9974074138488551,
+  "MAPE_percent": 0.8965320587158203,
+  "NRMSE_by_mean": 0.015904140591259355,
+  "NRMSE_by_range": 0.007976611368990118,
+  "maximum_absolute_error": 2.028862953186035,
+  "median_sample_MAE": 0.02110447734594345,
+  "95th_percentile_sample_MAE": 0.05530889704823494,
+  "peak_wavelength_MAE_nm": 8.330666542053223,
+  "peak_amplitude_MAE": 0.03168249502778053,
+  "model_name": "RawK0MLP",
+  "parameter_count": 139521,
+  "best_epoch": 300,
+  "best_validation_MSE": 0.0025693021023439036,
+  "training_seconds": 5695.912999391556,
+  "device": "cpu",
+  "used_amp": false
+}

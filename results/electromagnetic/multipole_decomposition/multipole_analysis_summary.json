@@ -1,0 +1,149 @@
+{
+  "stage": "09C_figure5_multipole_decomposition",
+  "status": "passed",
+  "pymiediff_version": "0.12",
+  "backend": "pena",
+  "precision": "double",
+  "device": "cpu",
+  "n_max": 27,
+  "peak_wavelength_nm": 406.0,
+  "peak_Qsca": 4.610889651808688,
+  "top_modes_at_peak": [
+    {
+      "mode": "M6",
+      "channel": "magnetic",
+      "order": 6,
+      "Qsca_at_peak": 1.1912215561018558,
+      "fraction_at_peak": 0.2583496127769143
+    },
+    {
+      "mode": "E4",
+      "channel": "electric",
+      "order": 4,
+      "Qsca_at_peak": 0.6874289407017373,
+      "fraction_at_peak": 0.14908813539532081
+    },
+    {
+      "mode": "MO",
+      "channel": "magnetic",
+      "order": 3,
+      "Qsca_at_peak": 0.6708673924847518,
+      "fraction_at_peak": 0.14549630183008053
+    },
+    {
+      "mode": "MQ",
+      "channel": "magnetic",
+      "order": 2,
+      "Qsca_at_peak": 0.45653530282466176,
+      "fraction_at_peak": 0.0990124113348883
+    },
+    {
+      "mode": "EQ",
+      "channel": "electric",
+      "order": 2,
+      "Qsca_at_peak": 0.41817016590368417,
+      "fraction_at_peak": 0.09069186154555897
+    },
+    {
+      "mode": "ED",
+      "channel": "electric",
+      "order": 1,
+      "Qsca_at_peak": 0.30534320418953714,
+      "fraction_at_peak": 0.06622218861164067
+    },
+    {
+      "mode": "M4",
+      "channel": "magnetic",
+      "order": 4,
+      "Qsca_at_peak": 0.2943017146268816,
+      "fraction_at_peak": 0.06382753369763197
+    },
+    {
+      "mode": "MD",
+      "channel": "magnetic",
+      "order": 1,
+      "Qsca_at_peak": 0.2640141334941626,
+      "fraction_at_peak": 0.057258827131245534
+    }
+  ],
+  "top_integrated_modes": [
+    {
+      "channel": "magnetic",
+      "order": 2,
+      "label": "MQ",
+      "integrated_qsca_nm": 479.81881708433286,
+      "fraction": 0.21440577528301472
+    },
+    {
+      "channel": "magnetic",
+      "order": 1,
+      "label": "MD",
+      "integrated_qsca_nm": 466.8763515155098,
+      "fraction": 0.20862246861484476
+    },
+    {
+      "channel": "electric",
+      "order": 1,
+      "label": "ED",
+      "integrated_qsca_nm": 398.0894724661945,
+      "fraction": 0.17788523279427615
+    },
+    {
+      "channel": "electric",
+      "order": 2,
+      "label": "EQ",
+      "integrated_qsca_nm": 323.52180788437465,
+      "fraction": 0.14456486817652323
+    },
+    {
+      "channel": "magnetic",
+      "order": 3,
+      "label": "MO",
+      "integrated_qsca_nm": 226.0647344702747,
+      "fraction": 0.10101643147882026
+    },
+    {
+      "channel": "electric",
+      "order": 3,
+      "label": "EO",
+      "integrated_qsca_nm": 145.75330475542782,
+      "fraction": 0.06512948053193265
+    },
+    {
+      "channel": "magnetic",
+      "order": 4,
+      "label": "M4",
+      "integrated_qsca_nm": 86.94090264896204,
+      "fraction": 0.03884931347529778
+    },
+    {
+      "channel": "electric",
+      "order": 4,
+      "label": "E4",
+      "integrated_qsca_nm": 68.09433935903745,
+      "fraction": 0.030427776283090343
+    }
+  ],
+  "singular_wavelengths_nm": [
+    568.0
+  ],
+  "richardson_h_nm": 0.001,
+  "richardson_errors": {
+    "568": 1.838230945239161e-08
+  },
+  "consistency_residuals": {
+    "multipole_sum_qsca": 1.7763568394002505e-15,
+    "multipole_sum_qext": 2.6645352591003757e-15,
+    "multipole_sum_qabs": 3.469446951953614e-18,
+    "stage08_qsca": 1.2699898910284446e-08,
+    "stage08_qext": 1.2724762132876322e-08,
+    "stage08_qabs": 2.4863167261698108e-11
+  },
+  "runtime_seconds": 1.8714590072631836,
+  "input_hashes": {
+    "final_json_sha256": "08c67af3000715f943a980a4f41c16ff1818f4d1ff0b761b2ff0feb2d8b8d3a6",
+    "final_spectra_sha256": "1c340026f1bb782748681e15579082899709f7b950fe84fb5468a675e6e52349",
+    "dataset_sha256": "007b1247fe59cac5e62fcca1bb1a677ed45e481af1b4eda7de6ba825a8646861"
+  },
+  "interpretation_scope": "External Mie-channel decomposition identifies modal contributions. It does not by itself assign a resonance to a particular physical layer."
+}

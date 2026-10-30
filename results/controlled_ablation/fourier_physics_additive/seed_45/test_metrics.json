@@ -1,0 +1,66 @@
+{
+  "study": "parameter_matched_pgff_component_ablation",
+  "protocol_version": "1.0.0",
+  "formal_protocol_run": true,
+  "variant": "fourier_physics_additive",
+  "role": "Fourier and physics features with parameter-matched additive structure conditioning instead of FiLM.",
+  "seed": 45,
+  "fourier_seed": 2026,
+  "parameter_count": 1397762,
+  "best_epoch": 300,
+  "epochs_completed": 300,
+  "best_validation_q_sca_MSE": 0.0005262198558387657,
+  "training_seconds": 8713.096824645996,
+  "test_inference_seconds": 1.9674763000002713,
+  "test_samples_per_second": 2287.1940058436176,
+  "device": "cpu",
+  "torch_version": "2.6.0+cu124",
+  "Q_sca": {
+    "MSE": 0.0004920245846733451,
+    "RMSE": 0.022181627187231892,
+    "MAE": 0.008910123258829117,
+    "R2": 0.9995036007397026,
+    "MAPE_percent": 0.3273485004901886,
+    "maximum_absolute_error": 1.7542569637298584,
+    "median_sample_MAE": 0.006862172856926918,
+    "95th_percentile_sample_MAE": 0.02312765270471573,
+    "peak_wavelength_MAE_nm": 2.259999990463257,
+    "peak_amplitude_MAE": 0.009992411360144615,
+    "shortwave_MAE_400p5_600p5": 0.016082683578133583,
+    "longwave_MAE_above_600p5": 0.005270315799862146,
+    "99th_percentile_sample_MAE": 0.035191334784030914
+  },
+  "Q_abs": {
+    "MSE": 2.510431659175083e-05,
+    "RMSE": 0.005010420799868094,
+    "MAE": 0.0014952763449400663,
+    "R2": 0.9941559371289627,
+    "MAPE_percent": 556300.125,
+    "maximum_absolute_error": 0.39307600259780884
+  },
+  "Q_ext": {
+    "MSE": 0.0005615437403321266,
+    "RMSE": 0.02369691415210273,
+    "MAE": 0.009240183047950268,
+    "R2": 0.9994450345181745,
+    "MAPE_percent": 0.32992345094680786,
+    "maximum_absolute_error": 1.7557156085968018
+  },
+  "max_physical_residual": 2.384185791015625e-07,
+  "negative_prediction_count": 0,
+  "provenance": {
+    "protocol_path": "configs/forward/controlled_ablation/protocol.json",
+    "protocol_sha256": "aa03037207676cb25f6a96505d4656e06c794f3dd37de49582d87ac78ee156c3",
+    "dataset_path": "data/dataset/multilayer_mie_dataset.npz",
+    "dataset_sha256": "007b1247fe59cac5e62fcca1bb1a677ed45e481af1b4eda7de6ba825a8646861",
+    "split_sha256": {
+      "idx_train.npy": "3ae268e35ae2773fd6905adfe453d2e4a53956b622b7ad50b50b8917aec52d77",
+      "idx_val.npy": "afa903c33fd7e9f62fd795d035b08151734f829ebcdfb5a1c5958699f6f8a085",
+      "idx_test.npy": "9bf221969ece5072af6397e7c5d5493a3160ab4be096f735d780c4102ee1c182"
+    },
+    "python": "3.11.15 | packaged by conda-forge | (main, Mar  5 2026, 16:36:00) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.22631-SP0",
+    "torch": "2.6.0+cu124",
+    "numpy": "2.2.6"
+  }
+}

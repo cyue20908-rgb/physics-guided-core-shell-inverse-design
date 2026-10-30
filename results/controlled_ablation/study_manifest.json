@@ -1,0 +1,168 @@
+{
+  "protocol": {
+    "protocol_version": "1.0.0",
+    "study_name": "parameter_matched_pgff_component_ablation",
+    "primary_endpoint": "Q_sca test MAE",
+    "dataset_path": "data/dataset/multilayer_mie_dataset.npz",
+    "split_dir": "checkpoints/forward/direct_spectrum_network",
+    "output_dir": "results/reproduced/forward_models/controlled_ablation",
+    "seeds": [
+      42,
+      43,
+      44,
+      45,
+      46
+    ],
+    "fourier_seed": 2026,
+    "variants": {
+      "raw_k0": {
+        "coordinate_mode": "raw_k0",
+        "use_physics_features": false,
+        "conditioning_mode": "additive",
+        "lambda_curve": 0.01,
+        "role": "Raw-wavenumber control with no Mie descriptors and no multiplicative FiLM interaction."
+      },
+      "fourier_only": {
+        "coordinate_mode": "fourier",
+        "use_physics_features": false,
+        "conditioning_mode": "additive",
+        "lambda_curve": 0.01,
+        "role": "Isolates fixed Fourier wavelength features."
+      },
+      "physics_only": {
+        "coordinate_mode": "raw_k0",
+        "use_physics_features": true,
+        "conditioning_mode": "additive",
+        "lambda_curve": 0.01,
+        "role": "Isolates the 24 Mie-inspired pointwise descriptors."
+      },
+      "fourier_physics_additive": {
+        "coordinate_mode": "fourier",
+        "use_physics_features": true,
+        "conditioning_mode": "additive",
+        "lambda_curve": 0.01,
+        "role": "Fourier and physics features with parameter-matched additive structure conditioning instead of FiLM."
+      },
+      "full_pgff": {
+        "coordinate_mode": "fourier",
+        "use_physics_features": true,
+        "conditioning_mode": "film",
+        "lambda_curve": 0.01,
+        "role": "Complete PGFF-Net treatment."
+      },
+      "full_pgff_no_curve": {
+        "coordinate_mode": "fourier",
+        "use_physics_features": true,
+        "conditioning_mode": "film",
+        "lambda_curve": 0.0,
+        "role": "Secondary loss ablation; excluded from the five-variant primary architecture table."
+      }
+    },
+    "primary_variants": [
+      "raw_k0",
+      "fourier_only",
+      "physics_only",
+      "fourier_physics_additive",
+      "full_pgff"
+    ],
+    "secondary_variants": [
+      "full_pgff_no_curve"
+    ],
+    "model": {
+      "hidden_dim": 192,
+      "fourier_frequencies": 32,
+      "fourier_scale": 3.0,
+      "dropout": 0.0,
+      "n_structure_blocks": 2,
+      "n_wavelength_blocks": 2,
+      "n_physics_blocks": 2,
+      "n_fusion_blocks": 2
+    },
+    "training": {
+      "batch_size": 128,
+      "epochs": 300,
+      "learning_rate": 0.0003,
+      "weight_decay": 1e-05,
+      "lambda_abs": 0.1,
+      "lambda_ext": 0.1,
+      "lambda_curve": 0.01,
+      "curve_warmup_epochs": 20,
+      "huber_beta": 0.02,
+      "patience": 50,
+      "scheduler_patience": 15,
+      "num_workers": 0,
+      "use_amp": false,
+      "gradient_clip_norm": 5.0,
+      "model_selection_metric": "validation Q_sca MSE"
+    },
+    "fairness_constraints": {
+      "identical_registered_parameter_count": true,
+      "minimum_input_informed_parameter_fraction": 0.98,
+      "identical_dataset_and_split": true,
+      "identical_optimizer_scheduler_and_epoch_budget": true,
+      "paired_training_seeds": true,
+      "fixed_fourier_basis_across_training_seeds": true,
+      "test_set_used_once_after_validation_selection": true
+    },
+    "reporting": {
+      "confidence_level": 0.95,
+      "report_mean_sd_across_seeds": true,
+      "report_paired_seed_differences_vs_full": true,
+      "do_not_claim_significance_from_five_seeds": true
+    }
+  },
+  "selection": {
+    "variants": [
+      "raw_k0",
+      "fourier_only",
+      "physics_only",
+      "fourier_physics_additive",
+      "full_pgff"
+    ],
+    "seeds": [
+      42,
+      43,
+      44,
+      45,
+      46
+    ],
+    "epochs": 300,
+    "batch_size": 128,
+    "device": "cpu",
+    "formal_protocol": true
+  },
+  "parameter_audit": {
+    "parameter_counts": {
+      "raw_k0": 1397762,
+      "fourier_only": 1397762,
+      "physics_only": 1397762,
+      "fourier_physics_additive": 1397762,
+      "full_pgff": 1397762
+    },
+    "identical": true,
+    "common_parameter_count": 1397762,
+    "input_informed_parameter_counts": {
+      "raw_k0": 1381058,
+      "fourier_only": 1393154,
+      "physics_only": 1385666,
+      "fourier_physics_additive": 1397762,
+      "full_pgff": 1397762
+    },
+    "minimum_input_informed_fraction": 0.9880494676489989
+  },
+  "provenance": {
+    "protocol_path": "configs/forward/controlled_ablation/protocol.json",
+    "protocol_sha256": "aa03037207676cb25f6a96505d4656e06c794f3dd37de49582d87ac78ee156c3",
+    "dataset_path": "data/dataset/multilayer_mie_dataset.npz",
+    "dataset_sha256": "007b1247fe59cac5e62fcca1bb1a677ed45e481af1b4eda7de6ba825a8646861",
+    "split_sha256": {
+      "idx_train.npy": "3ae268e35ae2773fd6905adfe453d2e4a53956b622b7ad50b50b8917aec52d77",
+      "idx_val.npy": "afa903c33fd7e9f62fd795d035b08151734f829ebcdfb5a1c5958699f6f8a085",
+      "idx_test.npy": "9bf221969ece5072af6397e7c5d5493a3160ab4be096f735d780c4102ee1c182"
+    },
+    "python": "3.11.15 | packaged by conda-forge | (main, Mar  5 2026, 16:36:00) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.22631-SP0",
+    "torch": "2.6.0+cu124",
+    "numpy": "2.2.6"
+  }
+}

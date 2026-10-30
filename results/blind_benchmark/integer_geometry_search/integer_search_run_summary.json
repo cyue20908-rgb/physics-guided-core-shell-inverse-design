@@ -1,0 +1,130 @@
+{
+  "stage": "05_integer_nanometer_validate",
+  "version": "tandem-mie-inverse-2026-07-27-stage05-v1",
+  "status": "passed",
+  "wall_time_seconds": 124.04421663284302,
+  "python": "3.11.15",
+  "torch": "2.6.0+cu124",
+  "device": "cpu",
+  "protocol": {
+    "integer_radius_nm": 2,
+    "batch_size": 64,
+    "final_top_k": 10,
+    "pymiediff_backend": "pena",
+    "pymiediff_precision": "double",
+    "solver_singularity_tolerance": 1e-06,
+    "negative_efficiency_tolerance": 1e-07,
+    "energy_residual_tolerance": 1e-08,
+    "success_nmae": 0.05,
+    "success_nrmse": 0.05,
+    "success_r2": 0.99,
+    "high_accuracy_nmae": 0.02,
+    "high_accuracy_nrmse": 0.02,
+    "peak_error_tolerance_nm": 6.0,
+    "dominant_peak_ratio": 1.1,
+    "seed": 20260727
+  },
+  "blind_policy": {
+    "public_target_qsca_read": true,
+    "reference_geometry_read": false,
+    "reference_materials_read": false,
+    "target_qabs_read": false,
+    "target_qext_read": false,
+    "pgff_loaded": false,
+    "inverse_network_loaded": false,
+    "forward_spectra_read": false,
+    "train_validation_test_split_read": false,
+    "materials_fixed_during_integer_search": true,
+    "final_ranking_uses_pymiediff_only": true
+  },
+  "inputs": {
+    "forward_physics_asset": {
+      "path": "E:\\four-layer core–shell nanoparticles\\04_export_L4_v2\\L4_dataset.npz",
+      "filename": "L4_dataset.npz",
+      "size_bytes": 65144079,
+      "sha256": "007b1247fe59cac5e62fcca1bb1a677ed45e481af1b4eda7de6ba825a8646861"
+    },
+    "stage04_summary": {
+      "path": "E:\\four-layer core–shell nanoparticles\\10_tandem_mie_inverse_results\\04_pymiediff_continuous_refine\\stage04_summary.json",
+      "filename": "stage04_summary.json",
+      "size_bytes": 6306,
+      "sha256": "f3080599af4f5a32d6b3b6a24e573985b04078011914ca87aac7776d433dc0bf"
+    },
+    "stage04_selected_candidates": {
+      "path": "E:\\four-layer core–shell nanoparticles\\10_tandem_mie_inverse_results\\04_pymiediff_continuous_refine\\selected_stage05_continuous_candidates.npz",
+      "filename": "selected_stage05_continuous_candidates.npz",
+      "size_bytes": 243681,
+      "sha256": "89535aa5a3bfdf73df1e9ebb19305b8ed1baca61694166b013e5a7bb45c33d69"
+    }
+  },
+  "counts": {
+    "targets": 10,
+    "stage04_continuous_seeds": 100,
+    "valid_unique_integer_candidates": 36142,
+    "rejected_solver_singularities": 18109,
+    "rejected_physical_evaluations": 0,
+    "selected_final_candidates": 100,
+    "frozen_results": 10,
+    "standard_success_targets": 10,
+    "high_accuracy_targets": 10
+  },
+  "aggregate_metrics": {
+    "median_frozen_nmae": 0.0015423495197137613,
+    "mean_frozen_nmae": 0.0015645865315322052,
+    "maximum_frozen_nmae": 0.0023060136685976447,
+    "median_frozen_nrmse": 0.0021729575236943757,
+    "minimum_frozen_r2": 0.9996066318850885,
+    "maximum_energy_residual": 8.053156244957388e-16,
+    "minimum_solver_distance": 0.0105068055189361
+  },
+  "outputs": {
+    "all_valid_integer_candidates": {
+      "path": "E:\\four-layer core–shell nanoparticles\\10_tandem_mie_inverse_results\\05_integer_nanometer_validation\\all_valid_integer_candidates.csv",
+      "filename": "all_valid_integer_candidates.csv",
+      "size_bytes": 10490810,
+      "sha256": "3bdcb8466318883945c860ef87c59b05e0ce19b0b43ba9a076eb17dfec1e6283"
+    },
+    "selected_final_integer_candidates_csv": {
+      "path": "E:\\four-layer core–shell nanoparticles\\10_tandem_mie_inverse_results\\05_integer_nanometer_validation\\selected_final_integer_candidates.csv",
+      "filename": "selected_final_integer_candidates.csv",
+      "size_bytes": 28924,
+      "sha256": "9ed18d0c70c086e7e0834e0e81522437cccce49b44f359731661b1b69d67cd77"
+    },
+    "frozen_blind_integer_results_csv": {
+      "path": "E:\\four-layer core–shell nanoparticles\\10_tandem_mie_inverse_results\\05_integer_nanometer_validation\\frozen_blind_integer_results.csv",
+      "filename": "frozen_blind_integer_results.csv",
+      "size_bytes": 3226,
+      "sha256": "667b5a7717a77cd252cb911e5e68e2d021d75e5952663fff38b6942e46f2e18d"
+    },
+    "integer_target_summary": {
+      "path": "E:\\four-layer core–shell nanoparticles\\10_tandem_mie_inverse_results\\05_integer_nanometer_validation\\integer_target_summary.csv",
+      "filename": "integer_target_summary.csv",
+      "size_bytes": 1826,
+      "sha256": "112afc71c7d12205a91b7b20c9d22dfd8993a0bb2c06d2687e8c94656e9663cb"
+    },
+    "rejected_integer_singularities": {
+      "path": "E:\\four-layer core–shell nanoparticles\\10_tandem_mie_inverse_results\\05_integer_nanometer_validation\\rejected_integer_singularities.csv",
+      "filename": "rejected_integer_singularities.csv",
+      "size_bytes": 1733683,
+      "sha256": "d6d4b511fdbd6fcb70dcafb14259600c744d3c86bcb65b89cfe5e758008e2c33"
+    },
+    "rejected_integer_physics": {
+      "path": "E:\\four-layer core–shell nanoparticles\\10_tandem_mie_inverse_results\\05_integer_nanometer_validation\\rejected_integer_physics.csv",
+      "filename": "rejected_integer_physics.csv",
+      "size_bytes": 5,
+      "sha256": "f01a374e9c81e3db89b3a42940c4d6a5447684986a1296e42bf13f196eed6295"
+    },
+    "selected_final_integer_candidates_npz": {
+      "path": "E:\\four-layer core–shell nanoparticles\\10_tandem_mie_inverse_results\\05_integer_nanometer_validation\\selected_final_integer_candidates.npz",
+      "filename": "selected_final_integer_candidates.npz",
+      "size_bytes": 241154,
+      "sha256": "e72bbef533677c99162bbe1678bd9e08bd2d9c56ca3b0dd46e868172b8bdc530"
+    },
+    "frozen_blind_integer_results_npz": {
+      "path": "E:\\four-layer core–shell nanoparticles\\10_tandem_mie_inverse_results\\05_integer_nanometer_validation\\frozen_blind_integer_results.npz",
+      "filename": "frozen_blind_integer_results.npz",
+      "size_bytes": 32739,
+      "sha256": "6fce6cbf77b736b64d9c1ade4804501446b04f55d5b7a4bfff26758c7df77848"
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "model_name": "PGFFNet",
+  "parameter_count": 1397762,
+  "best_epoch": 298,
+  "best_validation_q_sca_MSE": 0.0003579431556475659,
+  "training_seconds": 9368.827020406723,
+  "device": "cpu",
+  "Q_sca": {
+    "MSE": 0.00032139039831236005,
+    "RMSE": 0.01792736451105851,
+    "MAE": 0.007984603755176067,
+    "R2": 0.9996757520912388,
+    "MAPE_percent": 0.2949465811252594,
+    "maximum_absolute_error": 1.2349011898040771,
+    "median_sample_MAE": 0.0063585503958165646,
+    "95th_percentile_sample_MAE": 0.019600261002779007,
+    "peak_wavelength_MAE_nm": 2.2293334007263184,
+    "peak_amplitude_MAE": 0.009509822353720665,
+    "shortwave_MAE_400p5_600p5": 0.01426706276834011,
+    "longwave_MAE_above_600p5": 0.004796491004526615
+  },
+  "Q_abs": {
+    "MSE": 2.0015615518786944e-05,
+    "RMSE": 0.004473881482425182,
+    "MAE": 0.001409738091751933,
+    "R2": 0.9953405417481295,
+    "MAPE_percent": 511103.8125,
+    "maximum_absolute_error": 0.3961309790611267
+  },
+  "Q_ext": {
+    "MSE": 0.00036809692392125726,
+    "RMSE": 0.019185852181262557,
+    "MAE": 0.008240222930908203,
+    "R2": 0.9996362151737083,
+    "MAPE_percent": 0.29520681500434875,
+    "maximum_absolute_error": 1.3025181293487549
+  },
+  "max_physical_residual": 2.384185791015625e-07,
+  "negative_prediction_count": 0,
+  "relative_to_baseline": {
+    "MAE_reduction_percent": 82.64696778871594,
+    "RMSE_reduction_percent": 79.08893853237699,
+    "peak_wavelength_MAE_reduction_percent": 83.75752802501103
+  }
+}

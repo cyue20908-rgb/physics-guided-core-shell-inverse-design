@@ -1,0 +1,68 @@
+{
+  "stage": "08C_constrained_continuous_refine",
+  "version": "goal-free-robust-design-2026-07-25-stage08C-v1",
+  "status": "passed",
+  "wall_time_seconds": 5824.5548820999975,
+  "device": "cpu",
+  "selected_absorption_tier": {
+    "name": "ultra_low",
+    "band_absorption_fraction_max": 0.005,
+    "absorption_fraction_p95_max": 0.01,
+    "qabs_max_max": 0.03
+  },
+  "counts": {
+    "stage08b_seeds": 200,
+    "restarts_per_seed": 4,
+    "continuous_trajectories": 800,
+    "axial_feasible_trajectories": 476,
+    "selected_stage08d_candidates": 100,
+    "selected_material_sequences": 40
+  },
+  "policy": {
+    "materials_fixed_during_refinement": true,
+    "pymiediff_double_precision": true,
+    "nominal_and_deterministic_continuous_perturbation_per_step": true,
+    "final_trajectory_ranking_uses_nine_axial_states": true,
+    "stage03_to_stage06_candidates_read": false
+  },
+  "inputs": {
+    "dataset": {
+      "path": "E:\\four-layer core–shell nanoparticles\\04_export_L4_v2\\L4_dataset.npz",
+      "filename": "L4_dataset.npz",
+      "size_bytes": 65144079,
+      "sha256": "007b1247fe59cac5e62fcca1bb1a677ed45e481af1b4eda7de6ba825a8646861"
+    },
+    "protocol_lock": {
+      "path": "E:\\four-layer core–shell nanoparticles\\11_goal_driven_robust_design_results\\08A_reachability_and_protocol\\STAGE08_PROTOCOL_LOCK.json",
+      "filename": "STAGE08_PROTOCOL_LOCK.json",
+      "size_bytes": 13076,
+      "sha256": "03fed20fcdfaf810491b64db40dc7ec624039ba80642631dd752c551272ebefb"
+    },
+    "stage08b_selected_seeds": {
+      "path": "E:\\four-layer core–shell nanoparticles\\11_goal_driven_robust_design_results\\08B_material_screen\\selected_stage08c_seeds.npz",
+      "filename": "selected_stage08c_seeds.npz",
+      "size_bytes": 16154,
+      "sha256": "b42fd5fa11d58796b62b6a78b7567b1c669cbc35f65d6ff8a1cb8b23671fec24"
+    }
+  },
+  "outputs": {
+    "all_trajectory_best": {
+      "path": "E:\\four-layer core–shell nanoparticles\\11_goal_driven_robust_design_results\\08C_continuous_refine\\continuous_trajectory_best.csv",
+      "filename": "continuous_trajectory_best.csv",
+      "size_bytes": 375773,
+      "sha256": "b397972781f339ca3bc326b6a94bfc345ba7ddd5713bc15aa56691e8f773250e"
+    },
+    "selected_continuous_csv": {
+      "path": "E:\\four-layer core–shell nanoparticles\\11_goal_driven_robust_design_results\\08C_continuous_refine\\selected_stage08d_continuous_candidates.csv",
+      "filename": "selected_stage08d_continuous_candidates.csv",
+      "size_bytes": 47292,
+      "sha256": "e88be245635f07835523dbbc58d285563e4e288b6e5f516ab93488a2164ce00d"
+    },
+    "selected_continuous_npz": {
+      "path": "E:\\four-layer core–shell nanoparticles\\11_goal_driven_robust_design_results\\08C_continuous_refine\\selected_stage08d_continuous_candidates.npz",
+      "filename": "selected_stage08d_continuous_candidates.npz",
+      "size_bytes": 11789,
+      "sha256": "512d19a51e90bdc88d7eb91d3ce2ffdc6a75f0aa7f0f4e5b764adcbf4e59e8c9"
+    }
+  }
+}

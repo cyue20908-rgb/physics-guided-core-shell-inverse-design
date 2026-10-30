@@ -1,0 +1,40 @@
+{
+  "protocol_version": "1.0.0",
+  "selected_variants": [
+    "raw_k0",
+    "fourier_only",
+    "physics_only",
+    "fourier_physics_additive",
+    "full_pgff"
+  ],
+  "selected_seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "expected_runs": 25,
+  "completed_runs": 25,
+  "complete": true,
+  "parameter_audit": {
+    "parameter_counts": {
+      "raw_k0": 1397762,
+      "fourier_only": 1397762,
+      "physics_only": 1397762,
+      "fourier_physics_additive": 1397762,
+      "full_pgff": 1397762
+    },
+    "identical": true,
+    "common_parameter_count": 1397762,
+    "input_informed_parameter_counts": {
+      "raw_k0": 1381058,
+      "fourier_only": 1393154,
+      "physics_only": 1385666,
+      "fourier_physics_additive": 1397762,
+      "full_pgff": 1397762
+    },
+    "minimum_input_informed_fraction": 0.9880494676489989
+  },
+  "warning": "Five paired seeds support uncertainty reporting but not a strong standalone significance claim. Report effect sizes and confidence intervals without binary significance language."
+}

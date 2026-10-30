@@ -1,0 +1,135 @@
+{
+  "stage": "08D_integer_robust_finalize",
+  "version": "goal-free-robust-design-2026-07-25-stage08D-v1",
+  "status": "passed",
+  "claim_scope": "unique protocol-selected optimum among the preregistered Stage-08 searched candidates; not a mathematical proof over every possible integer geometry in the full design space",
+  "protocol_sha256": "fd7c482c3ddd73969b5b1980f5c4d1b3eb41e562bec3728c852385ded86833a9",
+  "selected_absorption_tier": {
+    "name": "ultra_low",
+    "band_absorption_fraction_max": 0.005,
+    "absorption_fraction_p95_max": 0.01,
+    "qabs_max_max": 0.03
+  },
+  "structure": {
+    "sequence_id": 246,
+    "material_indices": [
+      3,
+      4,
+      1,
+      3
+    ],
+    "material_names_core_to_outer": [
+      "TiO2",
+      "PDMS",
+      "BaSO4",
+      "TiO2"
+    ],
+    "materials": "TiO2|PDMS|BaSO4|TiO2",
+    "r_core_nm": 142,
+    "t1_nm": 64,
+    "t2_nm": 57,
+    "t3_nm": 21,
+    "interface_radii_nm": [
+      142,
+      206,
+      263,
+      284
+    ],
+    "outer_radius_nm": 284,
+    "boundary_clearance_nm": 1.0
+  },
+  "nominal_performance": {
+    "tail_mean_qsca": 3.1582803760238183,
+    "qsca_p10": 3.323197506375346,
+    "mean_qsca": 3.725961315649018,
+    "min_qsca": 2.8034698207746316,
+    "qsca_cv": 0.10843433102083866,
+    "band_absorption_fraction": 9.546466200445723e-05,
+    "absorption_fraction_p95": 0.0003681871036679931,
+    "max_qabs": 0.01749100332222749,
+    "mean_qabs": 0.00035573159743682974,
+    "single_scattering_albedo": 0.9999045353379955,
+    "mean_csca_nm2": 944114.9927133197
+  },
+  "worst_case_over_81_states": {
+    "tail_mean_qsca": 3.096047114847832,
+    "qsca_p10": 3.205874311850953,
+    "mean_qsca": 3.7004277466624367,
+    "min_qsca": 2.7192504065053433,
+    "qsca_cv": 0.11489734300022163,
+    "band_absorption_fraction": 0.00011838534689714695,
+    "absorption_fraction_p95": 0.0004991173300105847,
+    "max_qabs": 0.028203864316539123,
+    "mean_qabs": 0.0004390347386648129,
+    "single_scattering_albedo": 0.9998816146531029,
+    "all_81_states_valid": true,
+    "all_81_states_absorption_feasible": true
+  },
+  "worst_tail_perturbation_nm": {
+    "delta_r_core": 1,
+    "delta_t1": -1,
+    "delta_t2": 1,
+    "delta_t3": 1,
+    "tail_mean_qsca": 3.096047114847832
+  },
+  "worst_absorption_perturbation_nm": {
+    "delta_r_core": -1,
+    "delta_t1": 0,
+    "delta_t2": -1,
+    "delta_t3": -1,
+    "band_absorption_fraction": 0.00011838534689714695,
+    "max_qabs": 0.028203864316539123
+  },
+  "selection_audit": {
+    "feasible_candidate_count": 262,
+    "primary_max": 3.123418353919435,
+    "primary_99pct_cut": 3.0921841703802406,
+    "primary_near_optimal_count": 89,
+    "secondary_max_within_primary_set": 3.7070979700495355,
+    "secondary_99pct_cut": 3.67002699034904,
+    "secondary_near_optimal_count": 11,
+    "tertiary_min_within_secondary_set": 0.1142339993598762,
+    "tertiary_tolerance": 0.001142339993598762,
+    "tertiary_near_optimal_count": 6,
+    "deterministic_final_tie_breaker_count": 6
+  },
+  "search_counts": {
+    "continuous_parents": 100,
+    "unique_nominal_integer_candidates": 38977,
+    "nominal_feasible_candidates": 36237,
+    "full_robustness_parents": 800,
+    "unique_robust_states_evaluated": 15494,
+    "full_robust_feasible_candidates": 262
+  },
+  "numerics": {
+    "pymiediff_backend": "pena",
+    "precision": "double",
+    "solver_singularity_tolerance": 1e-06,
+    "negative_efficiency_tolerance": 1e-07,
+    "energy_residual_tolerance": 1e-08,
+    "integer_singularity_policy": "symmetric_outer_radius_limit",
+    "integer_singularity_limit_epsilon_nm": 0.001,
+    "integer_singularity_limit_rtol": 1e-05
+  },
+  "artifacts": {
+    "final_csv": {
+      "path": "E:\\four-layer core–shell nanoparticles\\11_goal_driven_robust_design_results\\08D_final_robust_design\\FINAL_ROBUST_DESIGN.csv",
+      "filename": "FINAL_ROBUST_DESIGN.csv",
+      "size_bytes": 2035,
+      "sha256": "3f76fac738055224dc991d7a4f2cd6ffde950b27f865d28d881371be9fd1b586"
+    },
+    "final_81_state_csv": {
+      "path": "E:\\four-layer core–shell nanoparticles\\11_goal_driven_robust_design_results\\08D_final_robust_design\\FINAL_ROBUST_DESIGN_81_STATES.csv",
+      "filename": "FINAL_ROBUST_DESIGN_81_STATES.csv",
+      "size_bytes": 31435,
+      "sha256": "673bd205299842d71e177c101fee2efbe297d360675fbee2d2cf3345a5978c4a"
+    },
+    "final_spectra_npz": {
+      "path": "E:\\four-layer core–shell nanoparticles\\11_goal_driven_robust_design_results\\08D_final_robust_design\\FINAL_ROBUST_DESIGN_SPECTRA.npz",
+      "filename": "FINAL_ROBUST_DESIGN_SPECTRA.npz",
+      "size_bytes": 179362,
+      "sha256": "1c340026f1bb782748681e15579082899709f7b950fe84fb5468a675e6e52349"
+    }
+  },
+  "record_sha256": "342d57f1c214f8a9264f74f84ec4109710cbf4a457264bab908b9190f1cf09d1"
+}

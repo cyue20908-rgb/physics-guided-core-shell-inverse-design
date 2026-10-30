@@ -1,0 +1,7 @@
+Stage 08 goal-free robust design PASSED
+Materials: TiO2|PDMS|BaSO4|TiO2
+Geometry [r_core,t1,t2,t3] nm: [142, 64, 57, 21]
+Worst-81-state low-tail Qsca: 3.096047115
+Worst-81-state mean Qsca: 3.700427747
+Worst-81-state band absorption fraction: 0.0001183853469
+Exactly one integer structure has been frozen.
