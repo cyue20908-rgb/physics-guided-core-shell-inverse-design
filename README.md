@@ -56,6 +56,10 @@ python scripts/verification/compare_comsol_pymiediff.py
 New verification outputs are written below `results/reproduced/`, which is
 excluded from version control.
 
+Some frozen JSON records retain historical absolute Windows paths as provenance
+fields. These entries are not runtime settings; the packaged workflows resolve
+their operational paths relative to the repository root.
+
 Package integrity can be checked against
 `reproducibility/manifests/package_checksums.csv`. A downloaded release archive
 can be verified with:

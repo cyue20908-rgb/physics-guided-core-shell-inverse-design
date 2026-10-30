@@ -3,7 +3,7 @@ message: "If you use this software or its accompanying data, please cite the ass
 title: "Reproducibility Package for Physics-Guided Hybrid Inverse Design of Multilayer Core-Shell Nanoparticles"
 type: software
 version: 1.0.0
-date-released: 2026-10-27
+date-released: 2026-10-30
 repository-code: "https://github.com/cyue20908-rgb/physics-guided-core-shell-inverse-design"
 license:
   - MIT
