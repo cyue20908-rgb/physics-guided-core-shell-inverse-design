@@ -4,6 +4,8 @@ import csv
 import hashlib
 import json
 import re
+import subprocess
+import tomllib
 from pathlib import Path
 
 
@@ -11,12 +13,43 @@ ROOT = Path(__file__).resolve().parents[1]
 CHECKSUM_FILE = ROOT / "reproducibility" / "manifests" / "package_checksums.csv"
 
 
-def sha256_file(path: Path) -> str:
-    digest = hashlib.sha256()
-    with path.open("rb") as handle:
-        for block in iter(lambda: handle.read(1024 * 1024), b""):
-            digest.update(block)
-    return digest.hexdigest()
+GENERATED_DIRS = {".git", ".pytest_cache", "__pycache__", "build", "dist"}
+
+
+def included(relative: Path) -> bool:
+    return (
+        relative.as_posix() != "reproducibility/manifests/package_checksums.csv"
+        and relative.suffix.lower() not in {".pyc", ".pyo"}
+        and not GENERATED_DIRS.intersection(relative.parts)
+        and relative.parts[:2] != ("results", "reproduced")
+    )
+
+
+def git_snapshot() -> dict[str, bytes] | None:
+    try:
+        inside = subprocess.check_output(
+            ["git", "-C", str(ROOT), "rev-parse", "--is-inside-work-tree"],
+            stderr=subprocess.DEVNULL,
+            text=True,
+        ).strip()
+    except (OSError, subprocess.CalledProcessError):
+        return None
+    if inside != "true":
+        return None
+    raw = subprocess.check_output(
+        ["git", "-C", str(ROOT), "ls-tree", "-r", "-z", "--name-only", "HEAD"]
+    )
+    snapshot = {}
+    for value in raw.split(b"\0"):
+        if not value:
+            continue
+        relative = Path(value.decode("utf-8"))
+        if not included(relative):
+            continue
+        snapshot[relative.as_posix()] = subprocess.check_output(
+            ["git", "-C", str(ROOT), "show", f"HEAD:{relative.as_posix()}"]
+        )
+    return snapshot
 
 
 def test_required_release_files_exist() -> None:
@@ -75,29 +108,43 @@ def test_package_checksums() -> None:
         rows = list(csv.DictReader(handle))
     assert rows, "Package checksum manifest is empty."
 
+    snapshot = git_snapshot()
+    if snapshot is None:
+        snapshot = {
+            path.relative_to(ROOT).as_posix(): path.read_bytes()
+            for path in ROOT.rglob("*")
+            if path.is_file() and included(path.relative_to(ROOT))
+        }
+
     listed = set()
     for row in rows:
-        relative = Path(row["path"])
-        normalized = relative.as_posix()
+        normalized = Path(row["path"]).as_posix()
         assert normalized not in listed, f"Duplicate manifest row: {normalized}"
         listed.add(normalized)
-        path = ROOT / relative
-        assert path.is_file(), f"Manifest file is missing: {normalized}"
-        assert path.stat().st_size == int(row["bytes"]), f"Size mismatch: {normalized}"
-        assert sha256_file(path) == row["sha256"], f"SHA-256 mismatch: {normalized}"
-
-    actual = {
-        path.relative_to(ROOT).as_posix()
-        for path in ROOT.rglob("*")
-        if path.is_file()
-        and path != CHECKSUM_FILE
-        and path.suffix.lower() not in {".pyc", ".pyo"}
-        and not {".git", ".pytest_cache", "__pycache__", "build", "dist"}.intersection(
-            path.relative_to(ROOT).parts
+        assert normalized in snapshot, f"Manifest file is missing: {normalized}"
+        payload = snapshot[normalized]
+        assert len(payload) == int(row["bytes"]), f"Size mismatch: {normalized}"
+        assert hashlib.sha256(payload).hexdigest() == row["sha256"], (
+            f"SHA-256 mismatch: {normalized}"
         )
-        and path.relative_to(ROOT).parts[:2] != ("results", "reproduced")
-    }
+
+    actual = set(snapshot)
     assert listed == actual, (
         f"Manifest differs from package files; missing={sorted(actual - listed)}, "
         f"unexpected={sorted(listed - actual)}"
     )
+
+
+def test_release_versions_match() -> None:
+    project = tomllib.loads((ROOT / "pyproject.toml").read_text(encoding="utf-8"))
+    project_version = project["project"]["version"]
+    citation = (ROOT / "CITATION.cff").read_text(encoding="utf-8")
+    package_init = (
+        ROOT / "src" / "core_shell_optical_design" / "__init__.py"
+    ).read_text(encoding="utf-8")
+    citation_match = re.search(r"^version:\s*([^\s]+)\s*$", citation, re.MULTILINE)
+    package_match = re.search(r'^__version__\s*=\s*["\']([^"\']+)["\']', package_init)
+    assert citation_match is not None
+    assert package_match is not None
+    assert citation_match.group(1) == project_version
+    assert package_match.group(1) == project_version

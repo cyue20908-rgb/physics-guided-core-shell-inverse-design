@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Verify a reproducibility ZIP against its embedded SHA-256 manifest."""
+"""Verify a custom or GitHub/Zenodo reproducibility ZIP against SHA-256 manifests."""
 
 from __future__ import annotations
 
@@ -39,26 +39,60 @@ def main() -> None:
         unsafe = [name for name in names if not safe_member(name)]
         if unsafe:
             raise RuntimeError(f"Unsafe archive members: {unsafe}")
-        csv_candidates = [name for name in names if name.endswith("/MANIFEST_SHA256.csv") or name == "MANIFEST_SHA256.csv"]
-        json_candidates = [name for name in names if name.endswith("/MANIFEST_SHA256.json") or name == "MANIFEST_SHA256.json"]
-        if len(csv_candidates) != 1 or len(json_candidates) != 1:
-            raise RuntimeError("Exactly one embedded CSV and JSON manifest are required.")
-        csv_name = csv_candidates[0]
-        json_name = json_candidates[0]
-
-        manifest_json = json.loads(archive.read(json_name).decode("utf-8-sig"))
-        reader = csv.DictReader(io.StringIO(archive.read(csv_name).decode("utf-8-sig")))
-        rows = list(reader)
-        if int(manifest_json.get("file_count", -1)) != len(rows):
-            raise RuntimeError("CSV and JSON manifest counts disagree.")
-        expected_fields = {"relative_path", "size_bytes", "sha256"}
-        if set(reader.fieldnames or ()) != expected_fields:
-            raise RuntimeError(f"Unexpected CSV manifest columns: {reader.fieldnames}")
+        file_names = [info.filename for info in archive.infolist() if not info.is_dir()]
+        embedded_csv = [
+            name for name in file_names
+            if name.endswith("/MANIFEST_SHA256.csv") or name == "MANIFEST_SHA256.csv"
+        ]
+        embedded_json = [
+            name for name in file_names
+            if name.endswith("/MANIFEST_SHA256.json") or name == "MANIFEST_SHA256.json"
+        ]
 
         failures = []
         listed = set()
-        for row in rows:
-            name = row["relative_path"]
+        ignored = set()
+        if embedded_csv or embedded_json:
+            if len(embedded_csv) != 1 or len(embedded_json) != 1:
+                raise RuntimeError("Exactly one embedded CSV and JSON manifest are required.")
+            csv_name = embedded_csv[0]
+            json_name = embedded_json[0]
+            manifest_json = json.loads(archive.read(json_name).decode("utf-8-sig"))
+            reader = csv.DictReader(io.StringIO(archive.read(csv_name).decode("utf-8-sig")))
+            rows = list(reader)
+            if int(manifest_json.get("file_count", -1)) != len(rows):
+                raise RuntimeError("CSV and JSON manifest counts disagree.")
+            if set(reader.fieldnames or ()) != {"relative_path", "size_bytes", "sha256"}:
+                raise RuntimeError(f"Unexpected CSV manifest columns: {reader.fieldnames}")
+            checks = [
+                (row["relative_path"], int(row["size_bytes"]), row["sha256"])
+                for row in rows
+            ]
+            ignored = {csv_name, json_name}
+            manifest_kind = "embedded archive manifest"
+        else:
+            package_candidates = [
+                name for name in file_names
+                if name.endswith("/reproducibility/manifests/package_checksums.csv")
+                or name == "reproducibility/manifests/package_checksums.csv"
+            ]
+            if len(package_candidates) != 1:
+                raise RuntimeError("Exactly one package checksum manifest is required.")
+            csv_name = package_candidates[0]
+            suffix = "reproducibility/manifests/package_checksums.csv"
+            prefix = csv_name[:-len(suffix)]
+            reader = csv.DictReader(io.StringIO(archive.read(csv_name).decode("utf-8-sig")))
+            rows = list(reader)
+            if set(reader.fieldnames or ()) != {"path", "bytes", "sha256"}:
+                raise RuntimeError(f"Unexpected package checksum columns: {reader.fieldnames}")
+            checks = [
+                (f"{prefix}{row['path']}", int(row["bytes"]), row["sha256"])
+                for row in rows
+            ]
+            ignored = {csv_name}
+            manifest_kind = "package checksum manifest"
+
+        for name, expected_size, expected_hash in checks:
             if name in listed:
                 failures.append(f"duplicate manifest row: {name}")
                 continue
@@ -66,15 +100,15 @@ def main() -> None:
             if not safe_member(name):
                 failures.append(f"unsafe manifest path: {name}")
                 continue
-            if name not in names:
+            if name not in file_names:
                 failures.append(f"missing: {name}")
                 continue
             payload = archive.read(name)
-            if len(payload) != int(row["size_bytes"]):
+            if len(payload) != expected_size:
                 failures.append(f"size mismatch: {name}")
-            if sha256_bytes(payload) != row["sha256"]:
+            if sha256_bytes(payload) != expected_hash:
                 failures.append(f"sha256 mismatch: {name}")
-        unexpected = set(names) - listed - {csv_name, json_name}
+        unexpected = set(file_names) - listed - ignored
         if unexpected:
             failures.extend(f"unexpected archive member: {name}" for name in sorted(unexpected))
         corrupt = archive.testzip()
@@ -85,6 +119,7 @@ def main() -> None:
 
     print("Reproducibility archive verification PASSED")
     print(f"Archive: {args.archive}")
+    print(f"Manifest type: {manifest_kind}")
     print(f"Manifest files verified: {len(rows)}")
 
 

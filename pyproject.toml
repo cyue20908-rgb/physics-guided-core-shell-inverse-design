@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "physics-guided-core-shell-inverse-design"
-version = "1.0.1"
+version = "1.0.2"
 description = "Reproducibility package for multilayer core-shell nanoparticle optical design"
 readme = "README.md"
 requires-python = ">=3.10"

@@ -9,6 +9,7 @@ import hashlib
 import io
 import json
 import os
+import subprocess
 import zipfile
 from pathlib import Path
 
@@ -42,6 +43,31 @@ def distributable_files(root: Path) -> list[Path]:
     return sorted(files, key=lambda item: item.relative_to(root).as_posix())
 
 
+def distributable_git_payloads(root: Path, git_ref: str) -> list[tuple[str, bytes]]:
+    raw = subprocess.check_output(
+        ["git", "-C", str(root), "ls-tree", "-r", "-z", "--name-only", git_ref]
+    )
+    payloads = []
+    for value in raw.split(b"\0"):
+        if not value:
+            continue
+        relative = value.decode("utf-8")
+        path = Path(relative)
+        if GENERATED_DIRS.intersection(path.parts) or path.parts[:2] == (
+            "results", "reproduced"
+        ):
+            continue
+        if path.name in FORBIDDEN_NAMES or path.suffix.lower() in FORBIDDEN_SUFFIXES:
+            continue
+        if path.name in {"MANIFEST_SHA256.csv", "MANIFEST_SHA256.json"}:
+            continue
+        payload = subprocess.check_output(
+            ["git", "-C", str(root), "show", f"{git_ref}:{path.as_posix()}"]
+        )
+        payloads.append((path.as_posix(), payload))
+    return sorted(payloads, key=lambda item: item[0])
+
+
 def zip_info(name: str) -> zipfile.ZipInfo:
     info = zipfile.ZipInfo(name, FIXED_TIMESTAMP)
     info.compress_type = zipfile.ZIP_DEFLATED
@@ -53,6 +79,11 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=REPOSITORY_ROOT)
     parser.add_argument("--output", type=Path, default=None)
+    parser.add_argument(
+        "--git-ref",
+        default=None,
+        help="Build from committed Git blob bytes at this ref for archive-platform consistency.",
+    )
     return parser.parse_args()
 
 
@@ -72,9 +103,15 @@ def main() -> None:
     prefix = root.name
     payloads: list[tuple[str, bytes]] = []
     rows: list[dict[str, str | int]] = []
-    for path in distributable_files(root):
-        archive_name = f"{prefix}/{path.relative_to(root).as_posix()}"
-        payload = path.read_bytes()
+    if args.git_ref:
+        source_payloads = distributable_git_payloads(root, args.git_ref)
+    else:
+        source_payloads = [
+            (path.relative_to(root).as_posix(), path.read_bytes())
+            for path in distributable_files(root)
+        ]
+    for relative, payload in source_payloads:
+        archive_name = f"{prefix}/{relative}"
         payloads.append((archive_name, payload))
         rows.append(
             {
@@ -122,6 +159,7 @@ def main() -> None:
     print(f"Files listed in embedded manifest: {len(rows)}")
     print(f"Archive bytes: {output.stat().st_size}")
     print(f"Archive SHA-256: {archive_hash}")
+    print(f"Archive source: {'Git ref ' + args.git_ref if args.git_ref else 'working tree'}")
 
 
 if __name__ == "__main__":

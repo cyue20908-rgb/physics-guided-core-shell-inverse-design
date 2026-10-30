@@ -2,10 +2,10 @@ cff-version: 1.2.0
 message: "If you use this software or its accompanying data, please cite the associated article and this software package."
 title: "Reproducibility Package for Physics-Guided Hybrid Inverse Design of Multilayer Core-Shell Nanoparticles"
 type: software
-version: 1.0.1
+version: 1.0.2
 date-released: 2026-10-30
 repository-code: "https://github.com/cyue20908-rgb/physics-guided-core-shell-inverse-design"
-doi: "10.5281/zenodo.23803882"
+doi: "10.5281/zenodo.23803881"
 license: MIT
 abstract: "Source code, fixed inputs, trained model weights, and compact numerical evidence supporting spectral reconstruction and robust scattering design in multilayer core-shell nanoparticles."
 authors:
