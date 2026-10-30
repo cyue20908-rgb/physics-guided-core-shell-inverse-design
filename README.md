@@ -1,6 +1,6 @@
 # Physics-Guided Hybrid Inverse Design of Multilayer Core-Shell Nanoparticles
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23803881.svg)](https://doi.org/10.5281/zenodo.23803881)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23805270.svg)](https://doi.org/10.5281/zenodo.23805270)
 
 This repository is the reproducibility package for the study
 *Physics-Guided Hybrid Inverse Design of Multilayer Core-Shell Nanoparticles for
@@ -90,18 +90,17 @@ so that the reported outputs can be inspected without retraining every model.
 Citation metadata are provided in [`CITATION.cff`](CITATION.cff). GitHub and
 Zenodo can read this file directly. The repository is available at
 [github.com/cyue20908-rgb/physics-guided-core-shell-inverse-design](https://github.com/cyue20908-rgb/physics-guided-core-shell-inverse-design).
-Archived releases and their version-specific DOIs are available through the
-version-independent concept DOI
+The fixed v1.0.2 reproducibility snapshot is archived at
+[https://doi.org/10.5281/zenodo.23805270](https://doi.org/10.5281/zenodo.23805270).
+Archived releases are grouped under the version-independent concept DOI
 [https://doi.org/10.5281/zenodo.23803881](https://doi.org/10.5281/zenodo.23803881).
-For exact reproducibility, cite the version-specific DOI shown for the release
-that was used.
 
 Suggested citation:
 
 > Chang, X., An, H., Zhang, J., Guo, H., Gou, Y., & Fang, J. (2026).
 > *Reproducibility Package for Physics-Guided Hybrid Inverse Design of
 > Multilayer Core-Shell Nanoparticles* (v1.0.2). Zenodo.
-> https://doi.org/10.5281/zenodo.23803881
+> https://doi.org/10.5281/zenodo.23805270
 
 ## License
 
