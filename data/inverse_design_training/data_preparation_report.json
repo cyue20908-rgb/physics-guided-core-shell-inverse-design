@@ -1,0 +1,85 @@
+{
+  "stage": "01_prepare_tandem_data",
+  "version": "tandem-mie-inverse-2026-07-24-step01-v1",
+  "status": "passed",
+  "wall_time_seconds": 0.29752689972519875,
+  "data_policy": {
+    "inverse_network_training_split": "train only",
+    "model_selection_split": "validation only",
+    "test_split": "untouched until final trained-network evaluation",
+    "blind_targets": "not read by this stage",
+    "qsca_normalization_source": "training split only",
+    "legacy_inverse_results_read": false
+  },
+  "dataset": {
+    "path": "E:\\four-layer core–shell nanoparticles\\04_export_L4_v2\\L4_dataset.npz",
+    "filename": "L4_dataset.npz",
+    "size_bytes": 65144079,
+    "sha256": "007b1247fe59cac5e62fcca1bb1a677ed45e481af1b4eda7de6ba825a8646861"
+  },
+  "baseline_artifacts": {
+    "idx_train": {
+      "path": "E:\\four-layer core–shell nanoparticles\\06_baseline_mlp_results\\idx_train.npy",
+      "filename": "idx_train.npy",
+      "size_bytes": 168128,
+      "sha256": "3ae268e35ae2773fd6905adfe453d2e4a53956b622b7ad50b50b8917aec52d77"
+    },
+    "idx_val": {
+      "path": "E:\\four-layer core–shell nanoparticles\\06_baseline_mlp_results\\idx_val.npy",
+      "filename": "idx_val.npy",
+      "size_bytes": 36128,
+      "sha256": "afa903c33fd7e9f62fd795d035b08151734f829ebcdfb5a1c5958699f6f8a085"
+    },
+    "idx_test": {
+      "path": "E:\\four-layer core–shell nanoparticles\\06_baseline_mlp_results\\idx_test.npy",
+      "filename": "idx_test.npy",
+      "size_bytes": 36128,
+      "sha256": "9bf221969ece5072af6397e7c5d5493a3160ab4be096f735d780c4102ee1c182"
+    },
+    "normalization": {
+      "path": "E:\\four-layer core–shell nanoparticles\\06_baseline_mlp_results\\normalization.npz",
+      "filename": "normalization.npz",
+      "size_bytes": 2138,
+      "sha256": "7cc10d28f714334ff26f66980e8419ff35775c910a0ff17e172883f114d34289"
+    }
+  },
+  "outputs": {
+    "prepared_data": {
+      "path": "E:\\four-layer core–shell nanoparticles\\10_tandem_mie_inverse_results\\01_prepared_data\\prepared_tandem_data.npz",
+      "filename": "prepared_tandem_data.npz",
+      "size_bytes": 87558,
+      "sha256": "f80af947119b103def8f9ee76c0fbfa0aed1d6cd9f639ccbd46766576cc7f755"
+    },
+    "legal_material_sequences": {
+      "path": "E:\\four-layer core–shell nanoparticles\\10_tandem_mie_inverse_results\\01_prepared_data\\legal_material_sequences.csv",
+      "filename": "legal_material_sequences.csv",
+      "size_bytes": 13656,
+      "sha256": "1431c6b6f657b344cd66a9ea3a5c66dd032364202e51c443226793b5f50cdccf"
+    },
+    "split_statistics": {
+      "path": "E:\\four-layer core–shell nanoparticles\\10_tandem_mie_inverse_results\\01_prepared_data\\split_statistics.csv",
+      "filename": "split_statistics.csv",
+      "size_bytes": 530,
+      "sha256": "7ffbf4cb813eeef836369784df755a1666fa7754f0fa78a39c503ef58b38aca9"
+    }
+  },
+  "dimensions": {
+    "n_samples": 30000,
+    "n_wavelengths": 101,
+    "n_materials": 6,
+    "n_legal_material_sequences": 400,
+    "train": 21000,
+    "validation": 4500,
+    "test": 4500
+  },
+  "normalization": {
+    "std_floor": 0.0001,
+    "floored_wavelength_count": 0,
+    "minimum_saved_std": 0.8200177254588983,
+    "maximum_saved_std": 1.0594716180376678
+  },
+  "material_coverage": {
+    "training_sequence_count": 400,
+    "missing_training_sequences": []
+  }
+}

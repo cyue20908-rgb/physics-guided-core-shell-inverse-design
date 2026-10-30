@@ -1,0 +1,1 @@
+This directory contains the hidden generating structures. Do not open or read it during Stage 03 or PyMieDiff refinement. Unblind only after all inverse results are frozen.

@@ -1,0 +1,29 @@
+multilayer_mie_dataset.npz
+
+Dataset description
+-------------------
+This archive contains 30,000 four-region concentric core-shell nanoparticle
+samples evaluated on a 101-point wavelength grid from 400 to 1000 nm.
+Geometric quantities are in nanometres unless otherwise stated.
+
+Fields
+------
+- sample_id: (N,), original sample identifier.
+- radii: (N, 4), cumulative outer radius of each radial region, in nm.
+- material_indices: (N, 4), integer material indices for the four regions.
+- num_layers: (N,), equal to 4 for every sample.
+- wavelengths: (101,), wavelength grid in nm.
+- Q_ext, Q_sca, Q_abs: (N, 101), Mie extinction, scattering, and
+  absorption efficiencies.
+- C_ext, C_sca, C_abs: (N, 101), corresponding cross-sections in nm^2.
+- material_names: (6,), material registry.
+- material_n, material_k: (6, 101), interpolated refractive-index data.
+- material_epsilon: (6, 101), complex relative permittivity.
+- config: scalar object retained for compatibility with the original
+  training workflow; loading it requires allow_pickle=True.
+- config_json: scalar JSON representation of the dataset configuration.
+- quality_report_json: scalar JSON representation of the numerical-quality
+  report.
+
+The fixed train, validation, and test indices are stored separately under
+data/splits/. See README.md for environment setup and verification commands.

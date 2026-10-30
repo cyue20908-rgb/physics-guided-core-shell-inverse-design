@@ -1,0 +1,158 @@
+{
+  "stage": "02B_generate_strict_blind_targets",
+  "version": "tandem-mie-inverse-2026-07-24-target-benchmark-v2-singularity-guard",
+  "status": "passed",
+  "benchmark_id": "6ea5821e736e5adb3d8b2dca",
+  "wall_time_seconds": 19.245030999649316,
+  "protocol": {
+    "target_count": 10,
+    "pool_size": 4096,
+    "seed": 20260725,
+    "calibration_fraction": 0.25,
+    "offgrid_quantization_nm": 0.25,
+    "boundary_margin_nm": 2.0,
+    "geometry_percentile_min": 0.5,
+    "easy_percentile_low": 0.5,
+    "easy_percentile_high": 0.7,
+    "medium_percentile_low": 0.7,
+    "medium_percentile_high": 0.9,
+    "hard_percentile_low": 0.9,
+    "hard_percentile_high": 0.975,
+    "easy_count": 3,
+    "medium_count": 4,
+    "hard_count": 3,
+    "minimum_unique_material_sequences": 8,
+    "maximum_targets_per_material_sequence": 2,
+    "peak_amplitude_database_quantiles": [
+      0.1,
+      0.9
+    ],
+    "dynamic_range_database_quantile_min": 0.25,
+    "pymiediff_backend": "pena",
+    "pymiediff_precision": "double",
+    "solver_singularity_tolerance": 1e-06,
+    "negative_efficiency_tolerance": 1e-07,
+    "energy_residual_tolerance": 1e-08
+  },
+  "scientific_design": {
+    "benchmark_generated_after_inverse_model_frozen": true,
+    "inverse_network_loaded": false,
+    "pgff_loaded": false,
+    "legacy_inverse_results_read": false,
+    "public_inverse_input": "Qsca only",
+    "calibration_and_selection_subsets_disjoint": true,
+    "database_external_definition": "off-integer-grid physical geometry, no exact same-material geometry duplicate, solver-singularity-safe PyMieDiff geometry, and quantified exact nearest spectral/geometry distances to the full database",
+    "pymiediff_solver_singularity_guard": true,
+    "singularity_definition": "min |sin(2*pi*Rout/lambda)| > frozen tolerance",
+    "difficulty_composition": {
+      "easy": 3,
+      "medium": 4,
+      "hard": 3
+    },
+    "minimum_unique_material_sequences": 8,
+    "maximum_targets_per_material_sequence": 2
+  },
+  "frozen_stage02": {
+    "summary": {
+      "path": "E:\\four-layer core–shell nanoparticles\\10_tandem_mie_inverse_results\\02_frozen_pgff_tandem_training\\training_summary.json",
+      "filename": "training_summary.json",
+      "size_bytes": 6522,
+      "sha256": "e2a73ea156a3f1fd5cf91bcb4a6ce4be97c150544e7f2df625f6abd7a396fc7b"
+    },
+    "best_model": {
+      "path": "E:\\four-layer core–shell nanoparticles\\10_tandem_mie_inverse_results\\02_frozen_pgff_tandem_training\\best_model.pt",
+      "filename": "best_model.pt",
+      "size_bytes": 36163404,
+      "sha256": "16b0ed83008cc95932341c930f3e40a3364c4058f66b9a227605e576a3bb625d"
+    },
+    "best_epoch": 194,
+    "best_validation_mean_nmae": 0.0032889952417463064
+  },
+  "inputs": {
+    "dataset": {
+      "path": "E:\\four-layer core–shell nanoparticles\\04_export_L4_v2\\L4_dataset.npz",
+      "filename": "L4_dataset.npz",
+      "size_bytes": 65144079,
+      "sha256": "007b1247fe59cac5e62fcca1bb1a677ed45e481af1b4eda7de6ba825a8646861"
+    }
+  },
+  "devices": {
+    "pymiediff": "cpu",
+    "spectral_distance": "cpu"
+  },
+  "counts": {
+    "database_samples": 30000,
+    "candidate_pool": 4096,
+    "calibration": 1024,
+    "selection": 3072,
+    "eligible": 404,
+    "selected": 10,
+    "unique_selected_material_sequences": 10,
+    "maximum_selected_material_sequence_use": 1,
+    "solver_singular_sobol_candidates_rejected": 407
+  },
+  "sampling_diagnostics": {
+    "examined_sobol_points": 16384,
+    "attempts": 1,
+    "rejected_geometry": 11456,
+    "rejected_integer_grid": 20,
+    "rejected_solver_singular": 407,
+    "rejected_duplicate": 0,
+    "retained": 4096,
+    "solver_singularity_tolerance": 1e-06,
+    "minimum_retained_abs_sin": 0.0026533690601811114,
+    "median_retained_abs_sin": 0.009062162461147128
+  },
+  "pymiediff_validation": {
+    "maximum_raw_relative_energy_residual": 8.490867009995826e-16,
+    "roundoff_correction_counts": {
+      "qsca": 0,
+      "qabs": 34259,
+      "qext": 0
+    }
+  },
+  "database_thresholds": {
+    "peak_qsca_p10": 3.9508357286453246,
+    "peak_qsca_p90": 5.507214117050171,
+    "dynamic_range_qsca_p25": 2.5829851627349854
+  },
+  "outputs": {
+    "public_targets": {
+      "path": "E:\\four-layer core–shell nanoparticles\\10_tandem_mie_inverse_results\\03_public_blind_input\\blind_targets_public.npz",
+      "filename": "blind_targets_public.npz",
+      "size_bytes": 11026,
+      "sha256": "98057a846e7d5d4924334d376e04b9fa64f0ec790ab4a4504ba4b8cbc26f6eff"
+    },
+    "public_summary": {
+      "path": "E:\\four-layer core–shell nanoparticles\\10_tandem_mie_inverse_results\\03_public_blind_input\\blind_target_public_summary.csv",
+      "filename": "blind_target_public_summary.csv",
+      "size_bytes": 2001,
+      "sha256": "942421bd28ea6853477f3cc2e5821c21915e54365bde0707040d866cdbbd61a8"
+    },
+    "private_reference": {
+      "path": "E:\\four-layer core–shell nanoparticles\\10_tandem_mie_inverse_results\\03_private_blind_reference\\blind_references_private.npz",
+      "filename": "blind_references_private.npz",
+      "size_bytes": 27383,
+      "sha256": "b140e1749a0ec45d5816fa59f398c6b7064557329f824939cc5a620cdb2286df"
+    },
+    "pool_diagnostics": {
+      "path": "E:\\four-layer core–shell nanoparticles\\10_tandem_mie_inverse_results\\03_target_generation_diagnostics\\target_pool_diagnostics.csv",
+      "filename": "target_pool_diagnostics.csv",
+      "size_bytes": 1027504,
+      "sha256": "e998dc76e4a58d41384c9c4ef02420cfabeb4031181442a04e4eb46981dd7061"
+    },
+    "private_pool_inputs": {
+      "path": "E:\\four-layer core–shell nanoparticles\\10_tandem_mie_inverse_results\\03_private_target_generation_work\\target_pool_inputs_private.npz",
+      "filename": "target_pool_inputs_private.npz",
+      "size_bytes": 41232,
+      "sha256": "71f33c6ea4acabf4c6852e06917e6f601103b74e321a1c54ed7e5399c7e7b002"
+    },
+    "private_pool_checkpoint": {
+      "path": "E:\\four-layer core–shell nanoparticles\\10_tandem_mie_inverse_results\\03_private_target_generation_work\\pymiediff_pool_checkpoint_private.npz",
+      "filename": "pymiediff_pool_checkpoint_private.npz",
+      "size_bytes": 9447823,
+      "sha256": "5e6fc52405c6881428114b5e993fd137bcc4b7a9439005e1dd37b57ee7ca5138"
+    }
+  },
+  "archived_previous_benchmark": null
+}

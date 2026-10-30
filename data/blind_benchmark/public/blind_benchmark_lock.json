@@ -1,0 +1,7 @@
+{
+  "benchmark_id": "6ea5821e736e5adb3d8b2dca",
+  "public_target_sha256": "98057a846e7d5d4924334d376e04b9fa64f0ec790ab4a4504ba4b8cbc26f6eff",
+  "manifest_sha256": "636e7a90aeab06c4b373c1bb8922b22f99f1e8d1c555f3486afa5d778d71c8e5",
+  "frozen": true,
+  "instruction": "Do not regenerate after beginning Stage 03 formal inference."
+}
