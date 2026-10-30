@@ -1,0 +1,11 @@
+{
+  "n_total": 30000,
+  "n_train": 21000,
+  "n_validation": 4500,
+  "n_test": 4500,
+  "train_fraction": 0.7,
+  "validation_fraction": 0.15,
+  "test_fraction": 0.15,
+  "stratification": "four-layer material sequence",
+  "seed": 42
+}
